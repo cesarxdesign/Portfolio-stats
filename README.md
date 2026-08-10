@@ -14,14 +14,12 @@ Daily-updated dashboard of cesarxdesign site stats, pulled from PostHog.
 
 ## One-time setup
 
-1. **PostHog API key** — create a personal API key with the `query:read` scope at
-   eu.posthog.com → Settings → Personal API keys, then:
+1. **PostHog API key** — done (2026-08-10): `POSTHOG_API_KEY` repo secret is set.
+   If the key is ever rotated:
 
    ```bash
    gh secret set POSTHOG_API_KEY -R cesarxdesign/cesar-stats
    ```
-
-   (paste the key when prompted)
 
 2. **Vercel** — vercel.com/new → import `cesarxdesign/cesar-stats`, keep
    defaults. Bookmark the production URL.
