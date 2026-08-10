@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>cesarxdesign · site stats</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2' y='8' width='3' height='6' rx='1' fill='%232a78d6'/%3E%3Crect x='6.5' y='4' width='3' height='10' rx='1' fill='%232a78d6'/%3E%3Crect x='11' y='6' width='3' height='8' rx='1' fill='%232a78d6'/%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f9f9f7;
+    --surface:        #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11, 11, 11, 0.10);
+    --accent:         #2a78d6;
+    --accent-hover:   #256abf;
+    --track:          #cde2fb;
+    --delta-up:       #006300;
+    --serious:        #ec835a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:           #0d0d0d;
+      --surface:        #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255, 255, 255, 0.10);
+      --accent:         #3987e5;
+      --accent-hover:   #5598e7;
+      --track:          #0d366b;
+      --delta-up:       #0ca30c;
+      --serious:        #ec835a;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: clip; }
+  body {
+    background: var(--page);
+    color: var(--text-primary);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 32px 20px 48px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; display: grid; gap: 14px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 6px; }
+  header h1 { font-size: 17px; font-weight: 600; }
+  header .sub { color: var(--text-muted); font-size: 13px; }
+  .stale {
+    display: none; width: 100%; font-size: 13px; color: var(--serious);
+  }
+  .stale.on { display: block; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card h2 {
+    font-size: 13px; font-weight: 500; color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+  .tile .label { font-size: 13px; color: var(--text-secondary); }
+  .tile .value { font-size: 30px; font-weight: 600; line-height: 1.25; margin-top: 2px; }
+  .tile .delta { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+  .tile .delta.up { color: var(--delta-up); }
+  .tile .delta.flat { color: var(--text-muted); }
+
+  .chart-box { position: relative; }
+  .chart-box svg { display: block; width: 100%; }
+  .tooltip {
+    position: absolute; pointer-events: none; display: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 5px 9px; font-size: 13px; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10); z-index: 2;
+  }
+  .tooltip .t-day { color: var(--text-secondary); }
+  details { margin-top: 10px; }
+  summary { font-size: 13px; color: var(--text-muted); cursor: pointer; width: fit-content; }
+  table { border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  th { text-align: left; font-weight: 500; color: var(--text-secondary); }
+  th, td { padding: 3px 18px 3px 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.zero td { color: var(--text-muted); }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+  .rows { display: grid; gap: 9px; }
+  .row .line { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+  .row .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .n { font-variant-numeric: tabular-nums; color: var(--text-secondary); flex: none; }
+  .row .track { height: 6px; border-radius: 0 3px 3px 0; background: var(--track); margin-top: 4px; }
+  .row .fill { height: 100%; border-radius: 0 3px 3px 0; background: var(--accent); }
+  .empty-note { color: var(--text-muted); font-size: 13px; }
+
+  footer { color: var(--text-muted); font-size: 12.5px; line-height: 1.6; }
+  footer a { color: inherit; }
+  #err { display: none; color: var(--serious); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>cesarxdesign · site stats</h1>
+    <span class="sub" id="asof"></span>
+    <span class="stale" id="stale">⚠ Stale data: last snapshot is more than a day old.</span>
+  </header>
+
+  <p id="err">Could not load data/latest.json. Refresh, or check the latest snapshot run on GitHub.</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card">
+    <h2 id="chart-title">Daily visitors · last 30 days</h2>
+    <div class="chart-box" id="chart-box">
+      <div class="tooltip" id="tip"></div>
+    </div>
+    <details>
+      <summary>Table view</summary>
+      <table id="daily-table"></table>
+    </details>
+  </div>
+
+  <div class="cols">
+    <div class="card"><h2>Top pages · last 7 days</h2><div class="rows" id="pages"></div></div>
+    <div class="card"><h2>Sources · last 7 days</h2><div class="rows" id="sources"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Interactions · last 7 days</h2>
+    <table id="events-table"></table>
+  </div>
+
+  <footer>
+    Every number is filtered: bots, datacenter traffic (Boydton · Dulles · Paris · Amsterdam · exact-1920×1080 viewports)
+    and Portugal (own visits) are excluded. Complete days only, UTC. Snapshot daily at ~4:00 Lisbon.
+    <a href="data/latest.json">Raw data</a>
+  </footer>
+</div>
+
+<script>
+(async function () {
+  let data;
+  try {
+    const res = await fetch('data/latest.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    data = await res.json();
+  } catch (e) {
+    document.getElementById('err').style.display = 'block';
+    return;
+  }
+
+  const fmtDay = (iso, opts) =>
+    new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
+
+  // Header: data-through date + snapshot time (Lisbon), stale warning past 28h
+  const gen = new Date(data.generated_at);
+  const snapTime = gen.toLocaleTimeString('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' });
+  const snapDay = gen.toLocaleDateString('en-GB', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short' });
+  document.getElementById('asof').textContent =
+    'data through ' + fmtDay(data.data_through, { weekday: 'short', day: 'numeric', month: 'short' }) +
+    ' · snapshot ' + snapDay + ', ' + snapTime;
+  if (Date.now() - gen.getTime() > 28 * 3600 * 1000) {
+    document.getElementById('stale').classList.add('on');
+  }
+
+  // Stat tiles
+  const t = data.totals;
+  const delta = (cur, prev) => {
+    const d = cur - prev;
+    if (d > 0) return '<div class="delta up">↑ ' + d + ' vs prev 7 days</div>';
+    if (d < 0) return '<div class="delta">↓ ' + Math.abs(d) + ' vs prev 7 days</div>';
+    return '<div class="delta flat">= prev 7 days</div>';
+  };
+  document.getElementById('tiles').innerHTML = [
+    { l: 'Visitors · 7 days', v: t.visitors_7d, d: delta(t.visitors_7d, t.visitors_prev7d) },
+    { l: 'Pageviews · 7 days', v: t.pageviews_7d, d: delta(t.pageviews_7d, t.pageviews_prev7d) },
+    { l: 'Visitors · 30 days', v: t.visitors_30d, d: '' },
+    { l: 'Pageviews · 30 days', v: t.pageviews_30d, d: '' },
+  ].map(x =>
+    '<div class="card tile"><div class="label">' + x.l + '</div><div class="value">' + x.v + '</div>' + x.d + '</div>'
+  ).join('');
+
+  // Column chart: daily visitors, single series, hover tooltip, max-day direct label
+  const box = document.getElementById('chart-box');
+  const tip = document.getElementById('tip');
+  const days = data.daily;
+  const H = 190, PAD_T = 18, PAD_B = 22, PAD_L = 26;
+  const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  function drawChart() {
+    const W = box.clientWidth;
+    const max = Math.max(1, ...days.map(d => d.visitors));
+    const step = max <= 5 ? 1 : max <= 10 ? 5 : max <= 30 ? 10 : Math.ceil(max / 30) * 10;
+    const top = Math.ceil(max / step) * step;
+    const plotH = H - PAD_T - PAD_B, plotW = W - PAD_L;
+    const slot = plotW / days.length;
+    const barW = Math.min(24, Math.max(2, slot - 2));
+    const y = v => PAD_T + plotH * (1 - v / top);
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('height', H);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Daily unique visitors over the last 30 days; table view below.');
+
+    const el = (tag, attrs, text) => {
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      if (text != null) e.textContent = text;
+      return e;
+    };
+
+    // Gridlines + y ticks (hairline, recessive), baseline
+    for (let v = 0; v <= top; v += step) {
+      if (v > 0) svg.appendChild(el('line', { x1: PAD_L, y1: y(v), x2: W, y2: y(v), stroke: css('--grid'), 'stroke-width': 1 }));
+      svg.appendChild(el('text', { x: PAD_L - 7, y: y(v) + 4, 'text-anchor': 'end', 'font-size': 11, fill: css('--text-muted') }, String(v)));
+    }
+    svg.appendChild(el('line', { x1: PAD_L, y1: y(0), x2: W, y2: y(0), stroke: css('--baseline'), 'stroke-width': 1 }));
+
+    // Bars: 4px rounded data-end, square at the baseline (path, not rect)
+    const maxIdx = days.reduce((m, d, i) => d.visitors > days[m].visitors ? i : m, 0);
+    days.forEach((d, i) => {
+      const cx = PAD_L + slot * i + slot / 2;
+      if (d.visitors > 0) {
+        const x0 = cx - barW / 2, h = y(0) - y(d.visitors);
+        const r = Math.min(4, h, barW / 2);
+        const path = 'M' + x0 + ' ' + y(0) +
+          ' V' + (y(d.visitors) + r) +
+          ' Q' + x0 + ' ' + y(d.visitors) + ' ' + (x0 + r) + ' ' + y(d.visitors) +
+          ' H' + (x0 + barW - r) +
+          ' Q' + (x0 + barW) + ' ' + y(d.visitors) + ' ' + (x0 + barW) + ' ' + (y(d.visitors) + r) +
+          ' V' + y(0) + ' Z';
+        svg.appendChild(el('path', { d: path, fill: css('--accent'), 'data-i': i }));
+      }
+      // x labels: first day, max day, last day
+      if (i === 0 || i === days.length - 1) {
+        svg.appendChild(el('text', {
+          x: cx, y: H - 6, 'text-anchor': i === 0 ? 'start' : 'end', 'font-size': 11, fill: css('--text-muted'),
+        }, fmtDay(d.day, { day: 'numeric', month: 'short' })));
+      }
+      if (i === maxIdx && d.visitors > 0) {
+        svg.appendChild(el('text', {
+          x: cx, y: y(d.visitors) - 6, 'text-anchor': 'middle', 'font-size': 11.5, 'font-weight': 600, fill: css('--text-secondary'),
+        }, String(d.visitors)));
+      }
+    });
+
+    // Hover: full-height hit slots, tooltip + bar emphasis
+    days.forEach((d, i) => {
+      const hit = el('rect', { x: PAD_L + slot * i, y: 0, width: slot, height: H, fill: 'transparent' });
+      hit.addEventListener('mouseenter', () => {
+        const bar = svg.querySelector('[data-i="' + i + '"]');
+        if (bar) bar.setAttribute('fill', css('--accent-hover'));
+        tip.innerHTML = '<span class="t-day">' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
+          '</span> · ' + d.visitors + ' visitor' + (d.visitors === 1 ? '' : 's') + ' · ' + d.pageviews + ' pageview' + (d.pageviews === 1 ? '' : 's');
+        tip.style.display = 'block';
+        const tw = tip.offsetWidth;
+        let lx = PAD_L + slot * i + slot / 2 - tw / 2;
+        lx = Math.max(0, Math.min(W - tw, lx));
+        tip.style.left = lx + 'px';
+        tip.style.top = (y(d.visitors) - 38) + 'px';
+      });
+      hit.addEventListener('mouseleave', () => {
+        const bar = svg.querySelector('[data-i="' + i + '"]');
+        if (bar) bar.setAttribute('fill', css('--accent'));
+        tip.style.display = 'none';
+      });
+      svg.appendChild(hit);
+    });
+
+    box.querySelectorAll('svg').forEach(s => s.remove());
+    box.appendChild(svg);
+  }
+  drawChart();
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawChart);
+
+  // Daily table view
+  document.getElementById('daily-table').innerHTML =
+    '<tr><th>Day</th><th class="num">Visitors</th><th class="num">Pageviews</th></tr>' +
+    days.map(d =>
+      '<tr' + (d.visitors === 0 ? ' class="zero"' : '') + '><td>' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
+      '</td><td class="num">' + d.visitors + '</td><td class="num">' + d.pageviews + '</td></tr>'
+    ).join('');
+
+  // Top pages + sources: label, count, proportional meter
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const rows = (items, name, count) => {
+    if (!items.length) return '<div class="empty-note">Nothing in the last 7 days.</div>';
+    const max = Math.max(...items.map(count));
+    return items.map(it =>
+      '<div class="row"><div class="line"><span class="name">' + esc(name(it)) + '</span><span class="n">' + count(it) +
+      '</span></div><div class="track"><div class="fill" style="width:' + (100 * count(it) / max) + '%"></div></div></div>'
+    ).join('');
+  };
+  document.getElementById('pages').innerHTML =
+    rows(data.top_pages, p => p.path, p => p.pageviews);
+  document.getElementById('sources').innerHTML =
+    rows(data.sources, s => s.source === '$direct' ? 'direct' : s.source, s => s.visitors);
+
+  // Interactions table
+  const pretty = { scroll_depth: 'Scroll depth', section_view: 'Section view', outbound_click: 'Outbound click', project_open: 'Project open' };
+  document.getElementById('events-table').innerHTML =
+    '<tr><th>Event</th><th class="num">Count</th><th class="num">Visitors</th></tr>' +
+    data.events.map(e =>
+      '<tr' + (e.hits === 0 ? ' class="zero"' : '') + '><td>' + (pretty[e.event] || e.event) +
+      '</td><td class="num">' + e.hits + '</td><td class="num">' + e.visitors + '</td></tr>'
+    ).join('');
+})();
+</script>
+</body>
+</html>

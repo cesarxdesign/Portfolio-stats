@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-08-10T10:05:45.139Z",
+  "data_through": "2026-08-09",
+  "totals": {
+    "visitors_7d": 18,
+    "pageviews_7d": 19,
+    "visitors_prev7d": 9,
+    "pageviews_prev7d": 10,
+    "visitors_30d": 27,
+    "pageviews_30d": 29
+  },
+  "daily": [
+    {
+      "day": "2026-07-11",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-12",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-13",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-14",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-15",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-16",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-17",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-18",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-19",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-20",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-21",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-22",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-23",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-24",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-25",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-26",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-27",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-28",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-29",
+      "visitors": 7,
+      "pageviews": 8
+    },
+    {
+      "day": "2026-07-30",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-07-31",
+      "visitors": 2,
+      "pageviews": 2
+    },
+    {
+      "day": "2026-08-01",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-08-02",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-08-03",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-08-04",
+      "visitors": 7,
+      "pageviews": 8
+    },
+    {
+      "day": "2026-08-05",
+      "visitors": 1,
+      "pageviews": 1
+    },
+    {
+      "day": "2026-08-06",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-08-07",
+      "visitors": 10,
+      "pageviews": 10
+    },
+    {
+      "day": "2026-08-08",
+      "visitors": 0,
+      "pageviews": 0
+    },
+    {
+      "day": "2026-08-09",
+      "visitors": 0,
+      "pageviews": 0
+    }
+  ],
+  "top_pages": [
+    {
+      "path": "/",
+      "pageviews": 10,
+      "visitors": 10
+    },
+    {
+      "path": "/confirmo",
+      "pageviews": 4,
+      "visitors": 4
+    },
+    {
+      "path": "/done",
+      "pageviews": 2,
+      "visitors": 2
+    },
+    {
+      "path": "/starcount",
+      "pageviews": 2,
+      "visitors": 2
+    },
+    {
+      "path": "/mara",
+      "pageviews": 1,
+      "visitors": 1
+    }
+  ],
+  "sources": [
+    {
+      "source": "$direct",
+      "visitors": 13,
+      "pageviews": 13
+    },
+    {
+      "source": "www.google.com",
+      "visitors": 1,
+      "pageviews": 2
+    },
+    {
+      "source": "www.linkedin.com",
+      "visitors": 1,
+      "pageviews": 1
+    }
+  ],
+  "events": [
+    {
+      "event": "scroll_depth",
+      "hits": 50,
+      "visitors": 13
+    },
+    {
+      "event": "section_view",
+      "hits": 34,
+      "visitors": 5
+    },
+    {
+      "event": "outbound_click",
+      "hits": 5,
+      "visitors": 3
+    },
+    {
+      "event": "project_open",
+      "hits": 0,
+      "visitors": 0
+    }
+  ]
+}

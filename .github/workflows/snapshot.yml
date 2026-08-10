@@ -1,0 +1,35 @@
+name: Daily snapshot
+
+on:
+  schedule:
+    # 03:00 and 04:00 UTC: one of the two is 4am in Lisbon year-round
+    # (WEST = UTC+1 in summer, WET = UTC in winter). The second run
+    # simply refreshes the snapshot; both land well before 8am.
+    - cron: '0 3,4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats from PostHog
+        env:
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+        run: node scripts/fetch-stats.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "cesarxdesign"
+          git config user.email "cesarxdesign@gmail.com"
+          git add public/data
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "snapshot $(date -u +%F)"
+            git push
+          fi
