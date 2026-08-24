@@ -51,13 +51,40 @@
   }
   .wrap { max-width: 920px; margin: 0 auto; display: grid; gap: 14px; }
 
-  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 6px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; margin-bottom: 6px; }
   header h1 { font-size: 17px; font-weight: 600; }
   header .sub { color: var(--text-muted); font-size: 13px; }
   .stale {
     display: none; width: 100%; font-size: 13px; color: var(--serious);
   }
   .stale.on { display: block; }
+
+  .range {
+    margin-left: auto; align-self: center;
+    font: inherit; font-size: 13px; color: var(--text-primary);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 7px; padding: 4px 8px; cursor: pointer;
+  }
+  .switch {
+    align-self: center;
+    display: inline-flex; align-items: center; gap: 8px;
+    cursor: pointer; user-select: none;
+  }
+  .switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .sw-track {
+    flex: none; position: relative; width: 32px; height: 18px;
+    border: 1px solid var(--border); border-radius: 9px; background: var(--grid);
+    transition: background 0.15s;
+  }
+  .sw-knob {
+    position: absolute; top: 2px; left: 2px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--surface);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); transition: transform 0.15s;
+  }
+  .switch input:checked + .sw-track { background: var(--accent); border-color: transparent; }
+  .switch input:checked + .sw-track .sw-knob { transform: translateX(14px); }
+  .switch input:focus-visible + .sw-track { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .switch .sw-label { font-size: 13px; color: var(--text-secondary); }
 
   .card {
     background: var(--surface);
@@ -70,7 +97,7 @@
     margin-bottom: 12px;
   }
 
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .tile .label { font-size: 13px; color: var(--text-secondary); }
   .tile .value { font-size: 30px; font-weight: 600; line-height: 1.25; margin-top: 2px; }
   .tile .delta { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
@@ -94,8 +121,7 @@
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   tr.zero td { color: var(--text-muted); }
 
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
   .rows { display: grid; gap: 9px; }
   .row .line { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
   .row .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -114,6 +140,12 @@
   <header>
     <h1>cesarxdesign · site stats</h1>
     <span class="sub" id="asof"></span>
+    <select class="range" id="range" aria-label="Date range"></select>
+    <label class="switch" id="pt-wrap">
+      <input type="checkbox" id="pt">
+      <span class="sw-track"><span class="sw-knob"></span></span>
+      <span class="sw-label">Include Portugal</span>
+    </label>
     <span class="stale" id="stale">⚠ Stale data: last snapshot is more than a day old.</span>
   </header>
 
@@ -133,33 +165,52 @@
   </div>
 
   <div class="cols">
-    <div class="card"><h2>Top pages · last 7 days</h2><div class="rows" id="pages"></div></div>
-    <div class="card"><h2>Sources · last 7 days</h2><div class="rows" id="sources"></div></div>
+    <div class="card"><h2 id="h-pages">Top pages</h2><div class="rows" id="pages"></div></div>
+    <div class="card"><h2 id="h-sources">Sources</h2><div class="rows" id="sources"></div></div>
+    <div class="card"><h2 id="h-countries">Countries</h2><div class="rows" id="countries"></div></div>
   </div>
 
   <div class="card">
-    <h2>Interactions · last 7 days</h2>
+    <h2 id="h-events">Interactions</h2>
     <table id="events-table"></table>
   </div>
 
   <footer>
-    Every number is filtered: bots, datacenter traffic (Boydton · Dulles · Paris · Amsterdam · exact-1920×1080 viewports)
-    and Portugal (own visits) are excluded. Complete days only, UTC. Snapshot daily at ~4:00 Lisbon.
+    Every number excludes bots and datacenter traffic (Boydton · Dulles · Paris · Amsterdam · exact-1920×1080 viewports).
+    <span id="pt-state"></span> Complete days only, UTC. Snapshot daily at ~4:00 Lisbon.
     <a href="data/latest.json">Raw data</a>
   </footer>
 </div>
 
 <script>
 (async function () {
+  const fail = (msg) => {
+    const el = document.getElementById('err');
+    if (msg) el.textContent = msg;
+    el.style.display = 'block';
+  };
+
   let data;
   try {
     const res = await fetch('data/latest.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
   } catch (e) {
-    document.getElementById('err').style.display = 'block';
+    fail();
     return;
   }
+  if (!data.views || !data.views.clean || !data.views.clean.windows) {
+    fail('This snapshot predates the date-range update. The next daily run (~4:00 Lisbon) rewrites it.');
+    return;
+  }
+
+  // Selectable ranges, matching the WINDOWS keys the snapshot ships.
+  const RANGES = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
+    key: 'd' + n,
+    label: 'Last ' + n + ' day' + (n === 1 ? '' : 's'),
+    sub: 'last ' + n + ' day' + (n === 1 ? '' : 's'),
+    prev: 'prev ' + (n === 1 ? 'day' : n + ' days'),
+  })).concat([{ key: 'd30', label: 'Last month', sub: 'last month', prev: 'prev month' }]);
 
   const fmtDay = (iso, opts) =>
     new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
@@ -175,27 +226,41 @@
     document.getElementById('stale').classList.add('on');
   }
 
+  // Two prepared datasets: Portugal out (default) and Portugal in.
+  const views = data.views;
+  const ptBox = document.getElementById('pt');
+  const rangeBox = document.getElementById('range');
+  if (!views.with_pt) document.getElementById('pt-wrap').style.display = 'none';
+
+  rangeBox.innerHTML = RANGES
+    .map((r) => '<option value="' + r.key + '">' + r.label + '</option>')
+    .join('');
+
+  let source = views.clean;   // the chosen Portugal variant
+  let range = RANGES[6];      // last 7 days
+  let win = source.windows[range.key];
+  let days = source.daily;
+
   // Stat tiles
-  const t = data.totals;
   const delta = (cur, prev) => {
     const d = cur - prev;
-    if (d > 0) return '<div class="delta up">↑ ' + d + ' vs prev 7 days</div>';
-    if (d < 0) return '<div class="delta">↓ ' + Math.abs(d) + ' vs prev 7 days</div>';
-    return '<div class="delta flat">= prev 7 days</div>';
+    if (d > 0) return '<div class="delta up">↑ ' + d + ' vs ' + range.prev + '</div>';
+    if (d < 0) return '<div class="delta">↓ ' + Math.abs(d) + ' vs ' + range.prev + '</div>';
+    return '<div class="delta flat">= ' + range.prev + '</div>';
   };
-  document.getElementById('tiles').innerHTML = [
-    { l: 'Visitors · 7 days', v: t.visitors_7d, d: delta(t.visitors_7d, t.visitors_prev7d) },
-    { l: 'Pageviews · 7 days', v: t.pageviews_7d, d: delta(t.pageviews_7d, t.pageviews_prev7d) },
-    { l: 'Visitors · 30 days', v: t.visitors_30d, d: '' },
-    { l: 'Pageviews · 30 days', v: t.pageviews_30d, d: '' },
-  ].map(x =>
-    '<div class="card tile"><div class="label">' + x.l + '</div><div class="value">' + x.v + '</div>' + x.d + '</div>'
-  ).join('');
+  function renderTiles() {
+    const t = win.totals;
+    document.getElementById('tiles').innerHTML = [
+      { l: 'Visitors · ' + range.sub, v: t.visitors, d: delta(t.visitors, t.prev_visitors) },
+      { l: 'Pageviews · ' + range.sub, v: t.pageviews, d: delta(t.pageviews, t.prev_pageviews) },
+    ].map(x =>
+      '<div class="card tile"><div class="label">' + x.l + '</div><div class="value">' + x.v + '</div>' + x.d + '</div>'
+    ).join('');
+  }
 
-  // Column chart: daily visitors, single series, hover tooltip, max-day direct label
+  // Column chart: daily visitors over the full 30 days, whatever the range
   const box = document.getElementById('chart-box');
   const tip = document.getElementById('tip');
-  const days = data.daily;
   const H = 190, PAD_T = 18, PAD_B = 22, PAD_L = 26;
   const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 
@@ -283,42 +348,84 @@
     box.querySelectorAll('svg').forEach(s => s.remove());
     box.appendChild(svg);
   }
-  drawChart();
-  let rt;
-  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawChart);
 
   // Daily table view
-  document.getElementById('daily-table').innerHTML =
-    '<tr><th>Day</th><th class="num">Visitors</th><th class="num">Pageviews</th></tr>' +
-    days.map(d =>
-      '<tr' + (d.visitors === 0 ? ' class="zero"' : '') + '><td>' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
-      '</td><td class="num">' + d.visitors + '</td><td class="num">' + d.pageviews + '</td></tr>'
-    ).join('');
+  function renderDaily() {
+    document.getElementById('daily-table').innerHTML =
+      '<tr><th>Day</th><th class="num">Visitors</th><th class="num">Pageviews</th></tr>' +
+      days.map(d =>
+        '<tr' + (d.visitors === 0 ? ' class="zero"' : '') + '><td>' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
+        '</td><td class="num">' + d.visitors + '</td><td class="num">' + d.pageviews + '</td></tr>'
+      ).join('');
+  }
 
-  // Top pages + sources: label, count, proportional meter
+  // Top pages, sources, countries: label, count, proportional meter
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const rows = (items, name, count) => {
-    if (!items.length) return '<div class="empty-note">Nothing in the last 7 days.</div>';
+    if (!items.length) return '<div class="empty-note">Nothing in this range.</div>';
     const max = Math.max(...items.map(count));
     return items.map(it =>
       '<div class="row"><div class="line"><span class="name">' + esc(name(it)) + '</span><span class="n">' + count(it) +
       '</span></div><div class="track"><div class="fill" style="width:' + (100 * count(it) / max) + '%"></div></div></div>'
     ).join('');
   };
-  document.getElementById('pages').innerHTML =
-    rows(data.top_pages, p => p.path, p => p.pageviews);
-  document.getElementById('sources').innerHTML =
-    rows(data.sources, s => s.source === '$direct' ? 'direct' : s.source, s => s.visitors);
+  function renderLists() {
+    document.getElementById('pages').innerHTML =
+      rows(win.top_pages, p => p.path === '/' ? '/home' : p.path, p => p.pageviews);
+    document.getElementById('sources').innerHTML =
+      rows(win.sources, s => s.source === '$direct' ? 'direct' : s.source, s => s.visitors);
+    document.getElementById('countries').innerHTML =
+      rows(win.countries, c => c.country, c => c.visitors);
+  }
 
   // Interactions table
   const pretty = { scroll_depth: 'Scroll depth', section_view: 'Section view', outbound_click: 'Outbound click', project_open: 'Project open' };
-  document.getElementById('events-table').innerHTML =
-    '<tr><th>Event</th><th class="num">Count</th><th class="num">Visitors</th></tr>' +
-    data.events.map(e =>
-      '<tr' + (e.hits === 0 ? ' class="zero"' : '') + '><td>' + (pretty[e.event] || e.event) +
-      '</td><td class="num">' + e.hits + '</td><td class="num">' + e.visitors + '</td></tr>'
-    ).join('');
+  function renderEvents() {
+    document.getElementById('events-table').innerHTML =
+      '<tr><th>Event</th><th class="num">Count</th><th class="num">Visitors</th></tr>' +
+      win.events.map(e =>
+        '<tr' + (e.hits === 0 ? ' class="zero"' : '') + '><td>' + (pretty[e.event] || e.event) +
+        '</td><td class="num">' + e.hits + '</td><td class="num">' + e.visitors + '</td></tr>'
+      ).join('');
+  }
+
+  function render() {
+    source = ptBox.checked && views.with_pt ? views.with_pt : views.clean;
+    range = RANGES.find(r => r.key === rangeBox.value) || RANGES[6];
+    win = source.windows[range.key];
+    days = source.daily;
+
+    document.getElementById('h-pages').textContent = 'Top pages · ' + range.sub;
+    document.getElementById('h-sources').textContent = 'Sources · ' + range.sub;
+    document.getElementById('h-countries').textContent = 'Countries · ' + range.sub;
+    document.getElementById('h-events').textContent = 'Interactions · ' + range.sub;
+    document.getElementById('pt-state').textContent =
+      ptBox.checked ? 'Portugal (own visits) is counted in.' : 'Portugal (own visits) is excluded.';
+
+    renderTiles();
+    drawChart();
+    renderDaily();
+    renderLists();
+    renderEvents();
+  }
+
+  const savedRange = localStorage.getItem('cxd-stats-range');
+  rangeBox.value = RANGES.some(r => r.key === savedRange) ? savedRange : 'd7';
+  ptBox.checked = !!views.with_pt && localStorage.getItem('cxd-stats-pt') === '1';
+
+  rangeBox.addEventListener('change', () => {
+    localStorage.setItem('cxd-stats-range', rangeBox.value);
+    render();
+  });
+  ptBox.addEventListener('change', () => {
+    localStorage.setItem('cxd-stats-pt', ptBox.checked ? '1' : '0');
+    render();
+  });
+  render();
+
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawChart);
 })();
 </script>
 </body>
