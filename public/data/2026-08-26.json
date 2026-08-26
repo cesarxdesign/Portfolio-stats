@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T04:32:58.741Z",
-  "data_through": "2026-08-25",
+  "generated_at": "2026-08-26T13:58:11.189Z",
+  "data_through": "2026-08-26",
   "ranges": [
     "d1",
     "d2",
@@ -14,11 +14,6 @@
   "views": {
     "clean": {
       "daily": [
-        {
-          "day": "2026-07-27",
-          "visitors": 0,
-          "pageviews": 0
-        },
         {
           "day": "2026-07-28",
           "visitors": 0,
@@ -163,24 +158,44 @@
           "day": "2026-08-25",
           "visitors": 2,
           "pageviews": 3
+        },
+        {
+          "day": "2026-08-26",
+          "visitors": 2,
+          "pageviews": 8
         }
       ],
       "windows": {
         "d1": {
           "totals": {
             "visitors": 2,
-            "pageviews": 3,
-            "prev_visitors": 5,
-            "prev_pageviews": 9
+            "pageviews": 8,
+            "prev_visitors": 2,
+            "prev_pageviews": 3
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 2,
+              "pageviews": 3,
               "visitors": 2
             },
             {
               "path": "/confirmo",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/mara",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -188,32 +203,32 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 3,
+              "pageviews": 8,
               "visitors": 2
             }
           ],
           "countries": [
             {
-              "country": "United Kingdom",
-              "pageviews": 2,
+              "country": "Spain",
+              "pageviews": 5,
               "visitors": 1
             },
             {
-              "country": "United States",
-              "pageviews": 1,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 4,
-              "visitors": 1
+              "hits": 30,
+              "visitors": 2
             },
             {
               "event": "section_view",
-              "hits": 1,
-              "visitors": 1
+              "hits": 27,
+              "visitors": 2
             },
             {
               "event": "project_open",
@@ -229,16 +244,16 @@
         },
         "d2": {
           "totals": {
-            "visitors": 7,
-            "pageviews": 12,
-            "prev_visitors": 0,
-            "prev_pageviews": 0
+            "visitors": 4,
+            "pageviews": 11,
+            "prev_visitors": 5,
+            "prev_pageviews": 9
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 5,
+              "visitors": 4
             },
             {
               "path": "/confirmo",
@@ -249,25 +264,35 @@
               "path": "/mara",
               "pageviews": 1,
               "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 10,
-              "visitors": 6
-            },
-            {
-              "source": "www.linkedin.com",
-              "pageviews": 2,
-              "visitors": 1
+              "pageviews": 11,
+              "visitors": 4
             }
           ],
           "countries": [
             {
-              "country": "United States",
-              "pageviews": 8,
-              "visitors": 5
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -275,8 +300,8 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "United States",
+              "pageviews": 1,
               "visitors": 1
             }
           ],
@@ -284,20 +309,20 @@
             {
               "event": "scroll_depth",
               "hits": 34,
-              "visitors": 5
-            },
-            {
-              "event": "section_view",
-              "hits": 20,
               "visitors": 3
             },
             {
-              "event": "outbound_click",
-              "hits": 1,
-              "visitors": 1
+              "event": "section_view",
+              "hits": 28,
+              "visitors": 3
             },
             {
               "event": "project_open",
+              "hits": 0,
+              "visitors": 0
+            },
+            {
+              "event": "outbound_click",
               "hits": 0,
               "visitors": 0
             }
@@ -305,24 +330,34 @@
         },
         "d3": {
           "totals": {
-            "visitors": 7,
-            "pageviews": 12,
-            "prev_visitors": 4,
-            "prev_pageviews": 7
+            "visitors": 9,
+            "pageviews": 20,
+            "prev_visitors": 1,
+            "prev_pageviews": 1
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 11,
+              "visitors": 9
             },
             {
               "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
+              "pageviews": 5,
+              "visitors": 5
             },
             {
               "path": "/mara",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -330,8 +365,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 10,
-              "visitors": 6
+              "pageviews": 18,
+              "visitors": 8
             },
             {
               "source": "www.linkedin.com",
@@ -344,6 +379,16 @@
               "country": "United States",
               "pageviews": 8,
               "visitors": 5
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -359,13 +404,13 @@
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 34,
-              "visitors": 5
+              "hits": 64,
+              "visitors": 7
             },
             {
               "event": "section_view",
-              "hits": 20,
-              "visitors": 3
+              "hits": 47,
+              "visitors": 5
             },
             {
               "event": "outbound_click",
@@ -381,24 +426,34 @@
         },
         "d4": {
           "totals": {
-            "visitors": 7,
-            "pageviews": 12,
+            "visitors": 9,
+            "pageviews": 20,
             "prev_visitors": 4,
             "prev_pageviews": 7
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 11,
+              "visitors": 9
             },
             {
               "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
+              "pageviews": 5,
+              "visitors": 5
             },
             {
               "path": "/mara",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -406,8 +461,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 10,
-              "visitors": 6
+              "pageviews": 18,
+              "visitors": 8
             },
             {
               "source": "www.linkedin.com",
@@ -420,6 +475,16 @@
               "country": "United States",
               "pageviews": 8,
               "visitors": 5
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -435,13 +500,13 @@
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 34,
-              "visitors": 5
+              "hits": 64,
+              "visitors": 7
             },
             {
               "event": "section_view",
-              "hits": 20,
-              "visitors": 3
+              "hits": 47,
+              "visitors": 5
             },
             {
               "event": "outbound_click",
@@ -457,24 +522,34 @@
         },
         "d5": {
           "totals": {
-            "visitors": 8,
-            "pageviews": 13,
-            "prev_visitors": 3,
-            "prev_pageviews": 6
+            "visitors": 9,
+            "pageviews": 20,
+            "prev_visitors": 4,
+            "prev_pageviews": 7
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 9,
-              "visitors": 8
+              "pageviews": 11,
+              "visitors": 9
             },
             {
               "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
+              "pageviews": 5,
+              "visitors": 5
             },
             {
               "path": "/mara",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -482,13 +557,13 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 10,
-              "visitors": 6
+              "pageviews": 18,
+              "visitors": 8
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 3,
-              "visitors": 2
+              "pageviews": 2,
+              "visitors": 1
             }
           ],
           "countries": [
@@ -496,6 +571,16 @@
               "country": "United States",
               "pageviews": 8,
               "visitors": 5
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -506,23 +591,18 @@
               "country": "New Zealand",
               "pageviews": 2,
               "visitors": 1
-            },
-            {
-              "country": "Spain",
-              "pageviews": 1,
-              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 38,
-              "visitors": 6
+              "hits": 64,
+              "visitors": 7
             },
             {
               "event": "section_view",
-              "hits": 20,
-              "visitors": 3
+              "hits": 47,
+              "visitors": 5
             },
             {
               "event": "outbound_click",
@@ -538,26 +618,31 @@
         },
         "d6": {
           "totals": {
-            "visitors": 11,
-            "pageviews": 19,
-            "prev_visitors": 2,
-            "prev_pageviews": 4
+            "visitors": 10,
+            "pageviews": 21,
+            "prev_visitors": 3,
+            "prev_pageviews": 6
           },
           "top_pages": [
             {
               "path": "/",
               "pageviews": 12,
-              "visitors": 11
+              "visitors": 10
             },
             {
               "path": "/confirmo",
-              "pageviews": 4,
-              "visitors": 4
+              "pageviews": 5,
+              "visitors": 5
             },
             {
               "path": "/mara",
               "pageviews": 2,
               "visitors": 2
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
             },
             {
               "path": "/starcount",
@@ -568,56 +653,51 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 13,
-              "visitors": 7
+              "pageviews": 18,
+              "visitors": 8
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 5,
-              "visitors": 3
-            },
-            {
-              "source": "www.google.com",
-              "pageviews": 1,
-              "visitors": 1
+              "pageviews": 3,
+              "visitors": 2
             }
           ],
           "countries": [
             {
               "country": "United States",
-              "pageviews": 9,
-              "visitors": 6
+              "pageviews": 8,
+              "visitors": 5
             },
             {
-              "country": "United Kingdom",
-              "pageviews": 4,
+              "country": "Spain",
+              "pageviews": 6,
               "visitors": 2
             },
             {
-              "country": "Germany",
+              "country": "Luxembourg",
               "pageviews": 3,
+              "visitors": 1
+            },
+            {
+              "country": "United Kingdom",
+              "pageviews": 2,
               "visitors": 1
             },
             {
               "country": "New Zealand",
               "pageviews": 2,
               "visitors": 1
-            },
-            {
-              "country": "Spain",
-              "pageviews": 1,
-              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 55,
+              "hits": 68,
               "visitors": 8
             },
             {
               "event": "section_view",
-              "hits": 36,
+              "hits": 47,
               "visitors": 5
             },
             {
@@ -634,29 +714,34 @@
         },
         "d7": {
           "totals": {
-            "visitors": 11,
-            "pageviews": 19,
+            "visitors": 13,
+            "pageviews": 27,
             "prev_visitors": 2,
             "prev_pageviews": 4
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 12,
-              "visitors": 11
+              "pageviews": 15,
+              "visitors": 13
             },
             {
               "path": "/confirmo",
-              "pageviews": 4,
-              "visitors": 4
+              "pageviews": 6,
+              "visitors": 6
             },
             {
               "path": "/mara",
+              "pageviews": 3,
+              "visitors": 3
+            },
+            {
+              "path": "/starcount",
               "pageviews": 2,
               "visitors": 2
             },
             {
-              "path": "/starcount",
+              "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
             }
@@ -664,8 +749,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 13,
-              "visitors": 7
+              "pageviews": 21,
+              "visitors": 9
             },
             {
               "source": "www.linkedin.com",
@@ -685,6 +770,11 @@
               "visitors": 6
             },
             {
+              "country": "Spain",
+              "pageviews": 6,
+              "visitors": 2
+            },
+            {
               "country": "United Kingdom",
               "pageviews": 4,
               "visitors": 2
@@ -695,26 +785,26 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             },
             {
-              "country": "Spain",
-              "pageviews": 1,
+              "country": "New Zealand",
+              "pageviews": 2,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 55,
-              "visitors": 8
+              "hits": 85,
+              "visitors": 10
             },
             {
               "event": "section_view",
-              "hits": 36,
-              "visitors": 5
+              "hits": 63,
+              "visitors": 7
             },
             {
               "event": "outbound_click",
@@ -730,24 +820,29 @@
         },
         "d30": {
           "totals": {
-            "visitors": 44,
-            "pageviews": 60,
+            "visitors": 46,
+            "pageviews": 68,
             "prev_visitors": 0,
             "prev_pageviews": 0
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 31,
-              "visitors": 30
+              "pageviews": 34,
+              "visitors": 32
             },
             {
               "path": "/confirmo",
-              "pageviews": 15,
-              "visitors": 15
+              "pageviews": 17,
+              "visitors": 17
             },
             {
               "path": "/starcount",
+              "pageviews": 6,
+              "visitors": 6
+            },
+            {
+              "path": "/mara",
               "pageviews": 5,
               "visitors": 5
             },
@@ -757,12 +852,12 @@
               "visitors": 4
             },
             {
-              "path": "/mara",
-              "pageviews": 4,
-              "visitors": 4
+              "path": "/cable",
+              "pageviews": 1,
+              "visitors": 1
             },
             {
-              "path": "/cable",
+              "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
             }
@@ -770,8 +865,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 44,
-              "visitors": 33
+              "pageviews": 52,
+              "visitors": 35
             },
             {
               "source": "www.linkedin.com",
@@ -811,6 +906,11 @@
               "visitors": 4
             },
             {
+              "country": "Spain",
+              "pageviews": 7,
+              "visitors": 3
+            },
+            {
               "country": "Jersey",
               "pageviews": 6,
               "visitors": 3
@@ -819,11 +919,6 @@
               "country": "Romania",
               "pageviews": 3,
               "visitors": 3
-            },
-            {
-              "country": "Spain",
-              "pageviews": 2,
-              "visitors": 2
             },
             {
               "country": "Switzerland",
@@ -836,26 +931,26 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             },
             {
-              "country": "India",
-              "pageviews": 1,
+              "country": "New Zealand",
+              "pageviews": 2,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 175,
-              "visitors": 33
+              "hits": 205,
+              "visitors": 35
             },
             {
               "event": "section_view",
-              "hits": 131,
-              "visitors": 17
+              "hits": 158,
+              "visitors": 19
             },
             {
               "event": "outbound_click",
@@ -869,15 +964,285 @@
             }
           ]
         }
-      }
+      },
+      "pages_table": [
+        {
+          "path": "/",
+          "all_pageviews": 34,
+          "all_visitors": 32,
+          "w": {
+            "d1": {
+              "pageviews": 3,
+              "visitors": 2
+            },
+            "d2": {
+              "pageviews": 5,
+              "visitors": 4
+            },
+            "d3": {
+              "pageviews": 11,
+              "visitors": 9
+            },
+            "d4": {
+              "pageviews": 11,
+              "visitors": 9
+            },
+            "d5": {
+              "pageviews": 11,
+              "visitors": 9
+            },
+            "d6": {
+              "pageviews": 12,
+              "visitors": 10
+            },
+            "d7": {
+              "pageviews": 15,
+              "visitors": 13
+            },
+            "d30": {
+              "pageviews": 34,
+              "visitors": 32
+            }
+          }
+        },
+        {
+          "path": "/confirmo",
+          "all_pageviews": 17,
+          "all_visitors": 17,
+          "w": {
+            "d1": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d2": {
+              "pageviews": 3,
+              "visitors": 3
+            },
+            "d3": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d4": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d5": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d6": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d7": {
+              "pageviews": 6,
+              "visitors": 6
+            },
+            "d30": {
+              "pageviews": 17,
+              "visitors": 17
+            }
+          }
+        },
+        {
+          "path": "/starcount",
+          "all_pageviews": 6,
+          "all_visitors": 6,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d4": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d5": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d6": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d7": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d30": {
+              "pageviews": 6,
+              "visitors": 6
+            }
+          }
+        },
+        {
+          "path": "/mara",
+          "all_pageviews": 5,
+          "all_visitors": 5,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d4": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d5": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d6": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d7": {
+              "pageviews": 3,
+              "visitors": 3
+            },
+            "d30": {
+              "pageviews": 5,
+              "visitors": 5
+            }
+          }
+        },
+        {
+          "path": "/done",
+          "all_pageviews": 4,
+          "all_visitors": 4,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 4,
+              "visitors": 4
+            }
+          }
+        },
+        {
+          "path": "/cable",
+          "all_pageviews": 1,
+          "all_visitors": 1,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 1,
+              "visitors": 1
+            }
+          }
+        },
+        {
+          "path": "/penfold",
+          "all_pageviews": 1,
+          "all_visitors": 1,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d4": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d5": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d6": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d7": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d30": {
+              "pageviews": 1,
+              "visitors": 1
+            }
+          }
+        }
+      ]
     },
     "with_pt": {
       "daily": [
-        {
-          "day": "2026-07-27",
-          "visitors": 0,
-          "pageviews": 0
-        },
         {
           "day": "2026-07-28",
           "visitors": 0,
@@ -1022,24 +1387,44 @@
           "day": "2026-08-25",
           "visitors": 10,
           "pageviews": 12
+        },
+        {
+          "day": "2026-08-26",
+          "visitors": 8,
+          "pageviews": 14
         }
       ],
       "windows": {
         "d1": {
           "totals": {
-            "visitors": 10,
-            "pageviews": 12,
-            "prev_visitors": 18,
-            "prev_pageviews": 22
+            "visitors": 8,
+            "pageviews": 14,
+            "prev_visitors": 10,
+            "prev_pageviews": 12
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 11,
-              "visitors": 10
+              "pageviews": 9,
+              "visitors": 8
             },
             {
               "path": "/confirmo",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/mara",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -1047,45 +1432,45 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 12,
-              "visitors": 10
+              "pageviews": 14,
+              "visitors": 8
             }
           ],
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 9,
-              "visitors": 8
+              "pageviews": 6,
+              "visitors": 6
             },
             {
-              "country": "United Kingdom",
-              "pageviews": 2,
+              "country": "Spain",
+              "pageviews": 5,
               "visitors": 1
             },
             {
-              "country": "United States",
-              "pageviews": 1,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 28,
+              "hits": 46,
               "visitors": 6
             },
             {
-              "event": "outbound_click",
-              "hits": 3,
-              "visitors": 1
-            },
-            {
               "event": "section_view",
-              "hits": 1,
-              "visitors": 1
+              "hits": 27,
+              "visitors": 2
             },
             {
               "event": "project_open",
+              "hits": 0,
+              "visitors": 0
+            },
+            {
+              "event": "outbound_click",
               "hits": 0,
               "visitors": 0
             }
@@ -1093,16 +1478,16 @@
         },
         "d2": {
           "totals": {
-            "visitors": 28,
-            "pageviews": 34,
-            "prev_visitors": 6,
-            "prev_pageviews": 6
+            "visitors": 18,
+            "pageviews": 26,
+            "prev_visitors": 21,
+            "prev_pageviews": 25
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 30,
-              "visitors": 28
+              "pageviews": 20,
+              "visitors": 18
             },
             {
               "path": "/confirmo",
@@ -1113,30 +1498,40 @@
               "path": "/mara",
               "pageviews": 1,
               "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 32,
-              "visitors": 27
-            },
-            {
-              "source": "www.linkedin.com",
-              "pageviews": 2,
-              "visitors": 1
+              "pageviews": 26,
+              "visitors": 18
             }
           ],
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 22,
-              "visitors": 21
+              "pageviews": 15,
+              "visitors": 14
             },
             {
-              "country": "United States",
-              "pageviews": 8,
-              "visitors": 5
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -1144,26 +1539,26 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "United States",
+              "pageviews": 1,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 98,
-              "visitors": 20
+              "hits": 74,
+              "visitors": 12
             },
             {
               "event": "section_view",
-              "hits": 20,
+              "hits": 28,
               "visitors": 3
             },
             {
               "event": "outbound_click",
-              "hits": 4,
-              "visitors": 2
+              "hits": 3,
+              "visitors": 1
             },
             {
               "event": "project_open",
@@ -1174,105 +1569,34 @@
         },
         "d3": {
           "totals": {
-            "visitors": 31,
-            "pageviews": 37,
-            "prev_visitors": 16,
-            "prev_pageviews": 30
+            "visitors": 36,
+            "pageviews": 48,
+            "prev_visitors": 10,
+            "prev_pageviews": 12
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 33,
-              "visitors": 31
+              "pageviews": 39,
+              "visitors": 36
             },
             {
               "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
-            },
-            {
-              "path": "/mara",
-              "pageviews": 1,
-              "visitors": 1
-            }
-          ],
-          "sources": [
-            {
-              "source": "$direct",
-              "pageviews": 35,
-              "visitors": 30
-            },
-            {
-              "source": "www.linkedin.com",
-              "pageviews": 2,
-              "visitors": 1
-            }
-          ],
-          "countries": [
-            {
-              "country": "Portugal",
-              "pageviews": 25,
-              "visitors": 24
-            },
-            {
-              "country": "United States",
-              "pageviews": 8,
+              "pageviews": 5,
               "visitors": 5
             },
             {
-              "country": "United Kingdom",
+              "path": "/mara",
               "pageviews": 2,
-              "visitors": 1
-            },
-            {
-              "country": "New Zealand",
-              "pageviews": 2,
-              "visitors": 1
-            }
-          ],
-          "events": [
-            {
-              "event": "scroll_depth",
-              "hits": 98,
-              "visitors": 20
-            },
-            {
-              "event": "section_view",
-              "hits": 20,
-              "visitors": 3
-            },
-            {
-              "event": "outbound_click",
-              "hits": 4,
               "visitors": 2
             },
             {
-              "event": "project_open",
-              "hits": 0,
-              "visitors": 0
-            }
-          ]
-        },
-        "d4": {
-          "totals": {
-            "visitors": 34,
-            "pageviews": 40,
-            "prev_visitors": 15,
-            "prev_pageviews": 29
-          },
-          "top_pages": [
-            {
-              "path": "/",
-              "pageviews": 36,
-              "visitors": 34
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
             },
             {
-              "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
-            },
-            {
-              "path": "/mara",
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -1280,8 +1604,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 38,
-              "visitors": 33
+              "pageviews": 46,
+              "visitors": 35
             },
             {
               "source": "www.linkedin.com",
@@ -1301,6 +1625,16 @@
               "visitors": 5
             },
             {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
+            },
+            {
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
@@ -1314,13 +1648,114 @@
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 98,
-              "visitors": 20
+              "hits": 144,
+              "visitors": 26
             },
             {
               "event": "section_view",
-              "hits": 20,
-              "visitors": 3
+              "hits": 47,
+              "visitors": 5
+            },
+            {
+              "event": "outbound_click",
+              "hits": 4,
+              "visitors": 2
+            },
+            {
+              "event": "project_open",
+              "hits": 0,
+              "visitors": 0
+            }
+          ]
+        },
+        "d4": {
+          "totals": {
+            "visitors": 39,
+            "pageviews": 51,
+            "prev_visitors": 18,
+            "prev_pageviews": 32
+          },
+          "top_pages": [
+            {
+              "path": "/",
+              "pageviews": 42,
+              "visitors": 39
+            },
+            {
+              "path": "/confirmo",
+              "pageviews": 5,
+              "visitors": 5
+            },
+            {
+              "path": "/mara",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "sources": [
+            {
+              "source": "$direct",
+              "pageviews": 49,
+              "visitors": 38
+            },
+            {
+              "source": "www.linkedin.com",
+              "pageviews": 2,
+              "visitors": 1
+            }
+          ],
+          "countries": [
+            {
+              "country": "Portugal",
+              "pageviews": 31,
+              "visitors": 30
+            },
+            {
+              "country": "United States",
+              "pageviews": 8,
+              "visitors": 5
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
+            },
+            {
+              "country": "United Kingdom",
+              "pageviews": 2,
+              "visitors": 1
+            },
+            {
+              "country": "New Zealand",
+              "pageviews": 2,
+              "visitors": 1
+            }
+          ],
+          "events": [
+            {
+              "event": "scroll_depth",
+              "hits": 144,
+              "visitors": 26
+            },
+            {
+              "event": "section_view",
+              "hits": 47,
+              "visitors": 5
             },
             {
               "event": "outbound_click",
@@ -1336,29 +1771,34 @@
         },
         "d5": {
           "totals": {
-            "visitors": 38,
-            "pageviews": 46,
-            "prev_visitors": 15,
-            "prev_pageviews": 26
+            "visitors": 42,
+            "pageviews": 54,
+            "prev_visitors": 18,
+            "prev_pageviews": 32
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 40,
-              "visitors": 38
+              "pageviews": 45,
+              "visitors": 42
             },
             {
               "path": "/confirmo",
-              "pageviews": 4,
-              "visitors": 4
+              "pageviews": 5,
+              "visitors": 5
             },
             {
-              "path": "/done",
+              "path": "/mara",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
             },
             {
-              "path": "/mara",
+              "path": "/starcount",
               "pageviews": 1,
               "visitors": 1
             }
@@ -1366,25 +1806,35 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 43,
-              "visitors": 36
+              "pageviews": 52,
+              "visitors": 41
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 3,
-              "visitors": 2
+              "pageviews": 2,
+              "visitors": 1
             }
           ],
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 33,
-              "visitors": 30
+              "pageviews": 34,
+              "visitors": 33
             },
             {
               "country": "United States",
               "pageviews": 8,
               "visitors": 5
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
             },
             {
               "country": "United Kingdom",
@@ -1395,23 +1845,18 @@
               "country": "New Zealand",
               "pageviews": 2,
               "visitors": 1
-            },
-            {
-              "country": "Spain",
-              "pageviews": 1,
-              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 110,
-              "visitors": 22
+              "hits": 144,
+              "visitors": 26
             },
             {
               "event": "section_view",
-              "hits": 21,
-              "visitors": 4
+              "hits": 47,
+              "visitors": 5
             },
             {
               "event": "outbound_click",
@@ -1427,29 +1872,24 @@
         },
         "d6": {
           "totals": {
-            "visitors": 47,
-            "pageviews": 67,
-            "prev_visitors": 9,
-            "prev_pageviews": 11
+            "visitors": 46,
+            "pageviews": 60,
+            "prev_visitors": 16,
+            "prev_pageviews": 27
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 53,
-              "visitors": 47
+              "pageviews": 49,
+              "visitors": 46
             },
             {
               "path": "/confirmo",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 6,
+              "visitors": 6
             },
             {
               "path": "/mara",
-              "pageviews": 3,
-              "visitors": 3
-            },
-            {
-              "path": "/starcount",
               "pageviews": 2,
               "visitors": 2
             },
@@ -1457,72 +1897,77 @@
               "path": "/done",
               "pageviews": 1,
               "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/starcount",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 61,
-              "visitors": 43
+              "pageviews": 57,
+              "visitors": 44
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 5,
-              "visitors": 3
-            },
-            {
-              "source": "www.google.com",
-              "pageviews": 1,
-              "visitors": 1
+              "pageviews": 3,
+              "visitors": 2
             }
           ],
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 48,
+              "pageviews": 39,
               "visitors": 36
             },
             {
               "country": "United States",
-              "pageviews": 9,
-              "visitors": 6
+              "pageviews": 8,
+              "visitors": 5
             },
             {
-              "country": "United Kingdom",
-              "pageviews": 4,
+              "country": "Spain",
+              "pageviews": 6,
               "visitors": 2
             },
             {
-              "country": "Germany",
+              "country": "Luxembourg",
               "pageviews": 3,
+              "visitors": 1
+            },
+            {
+              "country": "United Kingdom",
+              "pageviews": 2,
               "visitors": 1
             },
             {
               "country": "New Zealand",
               "pageviews": 2,
               "visitors": 1
-            },
-            {
-              "country": "Spain",
-              "pageviews": 1,
-              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 163,
-              "visitors": 29
+              "hits": 156,
+              "visitors": 28
             },
             {
               "event": "section_view",
-              "hits": 53,
-              "visitors": 9
+              "hits": 48,
+              "visitors": 6
             },
             {
               "event": "outbound_click",
-              "hits": 5,
-              "visitors": 3
+              "hits": 4,
+              "visitors": 2
             },
             {
               "event": "project_open",
@@ -1533,34 +1978,39 @@
         },
         "d7": {
           "totals": {
-            "visitors": 49,
-            "pageviews": 69,
-            "prev_visitors": 8,
-            "prev_pageviews": 10
+            "visitors": 55,
+            "pageviews": 81,
+            "prev_visitors": 10,
+            "prev_pageviews": 12
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 55,
-              "visitors": 49
+              "pageviews": 62,
+              "visitors": 55
             },
             {
               "path": "/confirmo",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 10,
+              "visitors": 9
             },
             {
               "path": "/mara",
+              "pageviews": 4,
+              "visitors": 4
+            },
+            {
+              "path": "/starcount",
               "pageviews": 3,
               "visitors": 3
             },
             {
-              "path": "/starcount",
-              "pageviews": 2,
-              "visitors": 2
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
             },
             {
-              "path": "/done",
+              "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
             }
@@ -1568,8 +2018,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 63,
-              "visitors": 45
+              "pageviews": 75,
+              "visitors": 51
             },
             {
               "source": "www.linkedin.com",
@@ -1585,13 +2035,18 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 50,
-              "visitors": 38
+              "pageviews": 54,
+              "visitors": 42
             },
             {
               "country": "United States",
               "pageviews": 9,
               "visitors": 6
+            },
+            {
+              "country": "Spain",
+              "pageviews": 6,
+              "visitors": 2
             },
             {
               "country": "United Kingdom",
@@ -1604,26 +2059,26 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             },
             {
-              "country": "Spain",
-              "pageviews": 1,
+              "country": "New Zealand",
+              "pageviews": 2,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 167,
-              "visitors": 30
+              "hits": 209,
+              "visitors": 35
             },
             {
               "event": "section_view",
-              "hits": 53,
-              "visitors": 9
+              "hits": 80,
+              "visitors": 11
             },
             {
               "event": "outbound_click",
@@ -1639,31 +2094,31 @@
         },
         "d30": {
           "totals": {
-            "visitors": 483,
-            "pageviews": 1332,
+            "visitors": 491,
+            "pageviews": 1346,
             "prev_visitors": 0,
             "prev_pageviews": 0
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 449,
-              "visitors": 249
+              "pageviews": 458,
+              "visitors": 257
             },
             {
               "path": "/confirmo",
-              "pageviews": 180,
-              "visitors": 118
+              "pageviews": 182,
+              "visitors": 120
             },
             {
               "path": "/mara",
-              "pageviews": 173,
-              "visitors": 88
+              "pageviews": 174,
+              "visitors": 89
             },
             {
               "path": "/penfold",
-              "pageviews": 132,
-              "visitors": 76
+              "pageviews": 133,
+              "visitors": 77
             },
             {
               "path": "/done",
@@ -1672,8 +2127,8 @@
             },
             {
               "path": "/starcount",
-              "pageviews": 118,
-              "visitors": 74
+              "pageviews": 119,
+              "visitors": 75
             },
             {
               "path": "/cable",
@@ -1709,8 +2164,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 1024,
-              "visitors": 389
+              "pageviews": 1038,
+              "visitors": 397
             },
             {
               "source": "localhost:8899",
@@ -1736,8 +2191,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 1272,
-              "visitors": 439
+              "pageviews": 1278,
+              "visitors": 445
             },
             {
               "country": "Poland",
@@ -1765,6 +2220,11 @@
               "visitors": 4
             },
             {
+              "country": "Spain",
+              "pageviews": 7,
+              "visitors": 3
+            },
+            {
               "country": "Jersey",
               "pageviews": 6,
               "visitors": 3
@@ -1773,11 +2233,6 @@
               "country": "Romania",
               "pageviews": 3,
               "visitors": 3
-            },
-            {
-              "country": "Spain",
-              "pageviews": 2,
-              "visitors": 2
             },
             {
               "country": "Switzerland",
@@ -1790,21 +2245,21 @@
               "visitors": 1
             },
             {
-              "country": "New Zealand",
-              "pageviews": 2,
+              "country": "Luxembourg",
+              "pageviews": 3,
               "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 3203,
-              "visitors": 375
+              "hits": 3249,
+              "visitors": 381
             },
             {
               "event": "section_view",
-              "hits": 1681,
-              "visitors": 186
+              "hits": 1708,
+              "visitors": 188
             },
             {
               "event": "project_open",
@@ -1818,7 +2273,711 @@
             }
           ]
         }
-      }
+      },
+      "pages_table": [
+        {
+          "path": "/",
+          "all_pageviews": 458,
+          "all_visitors": 257,
+          "w": {
+            "d1": {
+              "pageviews": 9,
+              "visitors": 8
+            },
+            "d2": {
+              "pageviews": 20,
+              "visitors": 18
+            },
+            "d3": {
+              "pageviews": 39,
+              "visitors": 36
+            },
+            "d4": {
+              "pageviews": 42,
+              "visitors": 39
+            },
+            "d5": {
+              "pageviews": 45,
+              "visitors": 42
+            },
+            "d6": {
+              "pageviews": 49,
+              "visitors": 46
+            },
+            "d7": {
+              "pageviews": 62,
+              "visitors": 55
+            },
+            "d30": {
+              "pageviews": 458,
+              "visitors": 257
+            }
+          }
+        },
+        {
+          "path": "/confirmo",
+          "all_pageviews": 182,
+          "all_visitors": 120,
+          "w": {
+            "d1": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d2": {
+              "pageviews": 3,
+              "visitors": 3
+            },
+            "d3": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d4": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d5": {
+              "pageviews": 5,
+              "visitors": 5
+            },
+            "d6": {
+              "pageviews": 6,
+              "visitors": 6
+            },
+            "d7": {
+              "pageviews": 10,
+              "visitors": 9
+            },
+            "d30": {
+              "pageviews": 182,
+              "visitors": 120
+            }
+          }
+        },
+        {
+          "path": "/mara",
+          "all_pageviews": 174,
+          "all_visitors": 89,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d4": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d5": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d6": {
+              "pageviews": 2,
+              "visitors": 2
+            },
+            "d7": {
+              "pageviews": 4,
+              "visitors": 4
+            },
+            "d30": {
+              "pageviews": 174,
+              "visitors": 89
+            }
+          }
+        },
+        {
+          "path": "/penfold",
+          "all_pageviews": 133,
+          "all_visitors": 77,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d4": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d5": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d6": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d7": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d30": {
+              "pageviews": 133,
+              "visitors": 77
+            }
+          }
+        },
+        {
+          "path": "/starcount",
+          "all_pageviews": 119,
+          "all_visitors": 75,
+          "w": {
+            "d1": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d2": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d3": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d4": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d5": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d6": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d7": {
+              "pageviews": 3,
+              "visitors": 3
+            },
+            "d30": {
+              "pageviews": 119,
+              "visitors": 75
+            }
+          }
+        },
+        {
+          "path": "/done",
+          "all_pageviews": 119,
+          "all_visitors": 47,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d7": {
+              "pageviews": 1,
+              "visitors": 1
+            },
+            "d30": {
+              "pageviews": 119,
+              "visitors": 47
+            }
+          }
+        },
+        {
+          "path": "/cable",
+          "all_pageviews": 74,
+          "all_visitors": 46,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 74,
+              "visitors": 46
+            }
+          }
+        },
+        {
+          "path": "/cable/",
+          "all_pageviews": 18,
+          "all_visitors": 2,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 18,
+              "visitors": 2
+            }
+          }
+        },
+        {
+          "path": "/live-www/penfold/index.html",
+          "all_pageviews": 15,
+          "all_visitors": 6,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 15,
+              "visitors": 6
+            }
+          }
+        },
+        {
+          "path": "/mara/",
+          "all_pageviews": 12,
+          "all_visitors": 2,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 12,
+              "visitors": 2
+            }
+          }
+        },
+        {
+          "path": "/live-www/confirmo/index.html",
+          "all_pageviews": 11,
+          "all_visitors": 7,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 11,
+              "visitors": 7
+            }
+          }
+        },
+        {
+          "path": "/live-www/mara/index.html",
+          "all_pageviews": 10,
+          "all_visitors": 7,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 10,
+              "visitors": 7
+            }
+          }
+        },
+        {
+          "path": "/live-www/starcount/index.html",
+          "all_pageviews": 7,
+          "all_visitors": 5,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 7,
+              "visitors": 5
+            }
+          }
+        },
+        {
+          "path": "/live-www/cable/index.html",
+          "all_pageviews": 6,
+          "all_visitors": 3,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 6,
+              "visitors": 3
+            }
+          }
+        },
+        {
+          "path": "/live-www/done/index.html",
+          "all_pageviews": 5,
+          "all_visitors": 3,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 5,
+              "visitors": 3
+            }
+          }
+        },
+        {
+          "path": "/mara/index.html",
+          "all_pageviews": 1,
+          "all_visitors": 1,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 1,
+              "visitors": 1
+            }
+          }
+        },
+        {
+          "path": "/penfold/",
+          "all_pageviews": 1,
+          "all_visitors": 1,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 1,
+              "visitors": 1
+            }
+          }
+        },
+        {
+          "path": "/live-www/index.html",
+          "all_pageviews": 1,
+          "all_visitors": 1,
+          "w": {
+            "d1": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d2": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d3": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d4": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d5": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d6": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d7": {
+              "pageviews": 0,
+              "visitors": 0
+            },
+            "d30": {
+              "pageviews": 1,
+              "visitors": 1
+            }
+          }
+        }
+      ]
     }
   }
 }
