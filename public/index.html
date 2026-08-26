@@ -205,33 +205,17 @@
   };
   const usable = (d) => d && d.views && d.views.clean && d.views.clean.windows;
 
-  // Live endpoint first. It holds the PostHog key server-side and answers with
-  // whatever has happened up to this second. If it is unavailable — key not
-  // set, PostHog down — fall back to the committed daily snapshot and say so.
-  let data, live = false;
-  try {
-    const res = await fetch('/api/stats', { cache: 'no-store' });
-    if (res.ok) {
-      const j = await res.json();
-      if (usable(j)) { data = j; live = true; }
-    }
-  } catch (e) { /* fall through to the snapshot */ }
+  // The live endpoint holds the PostHog key server-side and answers with
+  // whatever has happened up to this second, but a PostHog round trip is slow
+  // enough to be felt. So start it, don't wait on it: the committed snapshot
+  // paints immediately and the live numbers replace it when they arrive. The
+  // header always says which of the two is on screen.
+  const livePromise = fetch('/api/stats', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j) => (usable(j) ? j : null))
+    .catch(() => null);
 
-  if (!data) {
-    try {
-      const res = await fetch('data/latest.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error(res.status);
-      data = await res.json();
-    } catch (e) {
-      fail();
-      return;
-    }
-    if (!usable(data)) {
-      fail('This snapshot predates the current format. The next daily run (~4:00 Lisbon) rewrites it.');
-      return;
-    }
-  }
-  document.getElementById('loading').style.display = 'none';
+  let shown = null, views = null, live = false, livePending = true;
 
   // Selectable ranges, matching the WINDOWS keys the snapshot ships.
   const RANGES = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
@@ -244,23 +228,26 @@
   const fmtDay = (iso, opts) =>
     new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
 
-  // Header: live queries are current to the second; a fallback says so.
-  const gen = new Date(data.generated_at);
-  const snapTime = gen.toLocaleTimeString('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' });
-  const snapDay = gen.toLocaleDateString('en-GB', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short' });
-  document.getElementById('asof').textContent =
-    (live ? 'live · ' : 'data through ') + snapDay + ', ' + snapTime;
-  if (!live) {
+  // Header: live queries are current to the second; a fallback says so, and
+  // stays quiet about it while the live query is still in flight.
+  function updateHeader() {
+    const gen = new Date(shown.generated_at);
+    const snapTime = gen.toLocaleTimeString('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' });
+    const snapDay = gen.toLocaleDateString('en-GB', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short' });
+    document.getElementById('asof').textContent =
+      (live ? 'live · ' : 'data through ') + snapDay + ', ' + snapTime +
+      (!live && livePending ? ' · refreshing…' : '');
     const el = document.getElementById('stale');
-    el.textContent = '⚠ Live data unavailable — showing the last daily snapshot.';
-    el.classList.add('on');
+    if (live || livePending) {
+      el.classList.remove('on');
+    } else {
+      el.textContent = '⚠ Live data unavailable — showing the last daily snapshot.';
+      el.classList.add('on');
+    }
   }
 
-  // Two prepared datasets: Portugal out (default) and Portugal in.
-  const views = data.views;
   const ptBox = document.getElementById('pt');
   const rangeBox = document.getElementById('range');
-  if (!views.with_pt) document.getElementById('pt-wrap').style.display = 'none';
 
   rangeBox.innerHTML = RANGES
     .map((r) => '<option value="' + r.key + '">' + r.label + '</option>')
@@ -472,8 +459,6 @@
 
   const savedRange = localStorage.getItem('cxd-stats-range');
   rangeBox.value = RANGES.some(r => r.key === savedRange) ? savedRange : 'd7';
-  ptBox.checked = !!views.with_pt && localStorage.getItem('cxd-stats-pt') === '1';
-
   rangeBox.addEventListener('change', () => {
     localStorage.setItem('cxd-stats-range', rangeBox.value);
     render();
@@ -482,7 +467,38 @@
     localStorage.setItem('cxd-stats-pt', ptBox.checked ? '1' : '0');
     render();
   });
-  render();
+
+  // Put a payload on screen. Called once for the snapshot, again for live.
+  function show(payload, isLive) {
+    shown = payload;
+    views = payload.views;
+    live = isLive;
+    document.getElementById('pt-wrap').style.display = views.with_pt ? '' : 'none';
+    ptBox.checked = !!views.with_pt && localStorage.getItem('cxd-stats-pt') === '1';
+    document.getElementById('loading').style.display = 'none';
+    updateHeader();
+    render();
+  }
+
+  let snapshot = null;
+  try {
+    const res = await fetch('data/latest.json', { cache: 'no-store' });
+    if (res.ok) {
+      const j = await res.json();
+      if (usable(j)) snapshot = j;
+    }
+  } catch (e) { /* live may still carry the day */ }
+  if (snapshot) show(snapshot, false);
+
+  const liveData = await livePromise;
+  livePending = false;
+  if (liveData) {
+    show(liveData, true);
+  } else if (snapshot) {
+    updateHeader();
+  } else {
+    fail();
+  }
 
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });

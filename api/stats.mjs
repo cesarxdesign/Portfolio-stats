@@ -3,6 +3,9 @@
 //
 // Cached at Vercel's edge for 60s, so a burst of refreshes is one PostHog
 // round trip, and a public hit on this URL can't be used to hammer PostHog.
+// The long stale-while-revalidate window means a visit after a quiet day is
+// still answered instantly, from the previous response, while a fresh one is
+// fetched behind it for the next load.
 
 import { collectAll } from '../lib/stats.mjs';
 
@@ -16,7 +19,7 @@ export default async function handler(req, res) {
 
   try {
     const data = await collectAll({ apiKey });
-    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=600');
+    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=86400');
     res.status(200).json({ ...data, live: true });
   } catch (err) {
     // Upstream text can echo request detail, so it goes to the Vercel log only.
