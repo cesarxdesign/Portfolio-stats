@@ -138,6 +138,7 @@
   footer { color: var(--text-muted); font-size: 12.5px; line-height: 1.6; }
   footer a { color: inherit; }
   #err { display: none; color: var(--serious); }
+  #loading { color: var(--text-muted); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -154,7 +155,8 @@
     <span class="stale" id="stale">⚠ Stale data: last snapshot is more than 3 hours old.</span>
   </header>
 
-  <p id="err">Could not load data/latest.json. Refresh, or check the latest snapshot run on GitHub.</p>
+  <p id="loading">Querying PostHog…</p>
+  <p id="err">Could not load stats. Refresh, or check the latest snapshot run on GitHub.</p>
 
   <div class="tiles" id="tiles"></div>
 
@@ -187,7 +189,8 @@
 
   <footer>
     Every number excludes bots and datacenter traffic (Boydton · Dulles · Paris · Amsterdam · exact-1920×1080 viewports).
-    <span id="pt-state"></span> Ranges are UTC days and include today so far. Refreshed hourly.
+    <span id="pt-state"></span> Ranges are UTC days and include today so far.
+    Queried live from PostHog on load, cached 60s.
     <a href="data/latest.json">Raw data</a>
   </footer>
 </div>
@@ -195,24 +198,40 @@
 <script>
 (async function () {
   const fail = (msg) => {
+    document.getElementById('loading').style.display = 'none';
     const el = document.getElementById('err');
     if (msg) el.textContent = msg;
     el.style.display = 'block';
   };
+  const usable = (d) => d && d.views && d.views.clean && d.views.clean.windows;
 
-  let data;
+  // Live endpoint first. It holds the PostHog key server-side and answers with
+  // whatever has happened up to this second. If it is unavailable — key not
+  // set, PostHog down — fall back to the committed daily snapshot and say so.
+  let data, live = false;
   try {
-    const res = await fetch('data/latest.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.status);
-    data = await res.json();
-  } catch (e) {
-    fail();
-    return;
+    const res = await fetch('/api/stats', { cache: 'no-store' });
+    if (res.ok) {
+      const j = await res.json();
+      if (usable(j)) { data = j; live = true; }
+    }
+  } catch (e) { /* fall through to the snapshot */ }
+
+  if (!data) {
+    try {
+      const res = await fetch('data/latest.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(res.status);
+      data = await res.json();
+    } catch (e) {
+      fail();
+      return;
+    }
+    if (!usable(data)) {
+      fail('This snapshot predates the current format. The next daily run (~4:00 Lisbon) rewrites it.');
+      return;
+    }
   }
-  if (!data.views || !data.views.clean || !data.views.clean.windows) {
-    fail('This snapshot predates the date-range update. The next daily run (~4:00 Lisbon) rewrites it.');
-    return;
-  }
+  document.getElementById('loading').style.display = 'none';
 
   // Selectable ranges, matching the WINDOWS keys the snapshot ships.
   const RANGES = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
@@ -225,13 +244,16 @@
   const fmtDay = (iso, opts) =>
     new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
 
-  // Header: the cutoff is the snapshot itself now that today is included.
+  // Header: live queries are current to the second; a fallback says so.
   const gen = new Date(data.generated_at);
   const snapTime = gen.toLocaleTimeString('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' });
   const snapDay = gen.toLocaleDateString('en-GB', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short' });
-  document.getElementById('asof').textContent = 'data through ' + snapDay + ', ' + snapTime;
-  if (Date.now() - gen.getTime() > 3 * 3600 * 1000) {
-    document.getElementById('stale').classList.add('on');
+  document.getElementById('asof').textContent =
+    (live ? 'live · ' : 'data through ') + snapDay + ', ' + snapTime;
+  if (!live) {
+    const el = document.getElementById('stale');
+    el.textContent = '⚠ Live data unavailable — showing the last daily snapshot.';
+    el.classList.add('on');
   }
 
   // Two prepared datasets: Portugal out (default) and Portugal in.

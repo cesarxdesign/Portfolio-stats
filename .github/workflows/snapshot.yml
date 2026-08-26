@@ -2,10 +2,10 @@ name: Daily snapshot
 
 on:
   schedule:
-    # Hourly. The board includes today so far, so a once-a-day snapshot would
-    # show today as empty until the following morning. Each run rewrites
-    # latest.json and the current day's dated file.
-    - cron: '0 * * * *'
+    # Back to daily now that the page queries api/stats.mjs live on load. This
+    # run exists for the dated history archive, and for latest.json to stand in
+    # as the page's fallback if the live endpoint is ever unavailable.
+    - cron: '0 3,4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "snapshot $(date -u +'%F %H:%M')"
+            git commit -m "snapshot $(date -u +%F)"
             git push
           fi

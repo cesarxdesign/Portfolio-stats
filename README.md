@@ -2,10 +2,19 @@
 
 Daily-updated dashboard of cesarxdesign site stats, pulled from PostHog.
 
-- **Page:** `public/index.html`, static, reads `public/data/latest.json`.
-- **Refresh:** GitHub Action (`.github/workflows/snapshot.yml`) runs hourly,
-  queries PostHog, commits the new snapshot. Vercel redeploys on push. Hourly
-  rather than daily because the board includes today so far — see below.
+- **Page:** `public/index.html`, static. On load it calls `/api/stats` and
+  renders whatever PostHog has up to that second. If that call fails it falls
+  back to the committed `public/data/latest.json` and says so in the header.
+- **Live endpoint:** `api/stats.mjs`, a Vercel Serverless Function. It holds
+  `POSTHOG_API_KEY` server-side — the key never reaches the browser — and its
+  response is edge-cached for 60s, so a burst of refreshes is one PostHog round
+  trip and the public URL can't be used to hammer PostHog.
+- **Archive:** GitHub Action (`.github/workflows/snapshot.yml`) runs daily,
+  writing the dated history files and refreshing the fallback. It is no longer
+  what the page reads.
+- **Shared logic:** `lib/stats.mjs` builds the payload and is imported by both
+  the endpoint and the Action, so live and archived numbers are built by
+  identical code.
 - **Filter (applied to every number):** no flagged bots, no datacenter cities
   (Boydton, Dulles, Paris, Amsterdam), no exact-1920×1080 viewports (headless
   Chrome fingerprint).
@@ -26,12 +35,19 @@ Daily-updated dashboard of cesarxdesign site stats, pulled from PostHog.
 
 ## One-time setup
 
-1. **PostHog API key** — done (2026-08-10): `POSTHOG_API_KEY` repo secret is set.
-   If the key is ever rotated:
+1. **PostHog API key, twice.** GitHub (for the daily archive) and Vercel (for
+   the live endpoint) each need their own copy.
 
-   ```bash
-   gh secret set POSTHOG_API_KEY -R cesarxdesign/cesar-stats
-   ```
+   - GitHub — done (2026-08-10). If the key is ever rotated:
+
+     ```bash
+     gh secret set POSTHOG_API_KEY -R cesarxdesign/cesar-stats
+     ```
+
+   - Vercel — Project → Settings → Environment Variables → add
+     `POSTHOG_API_KEY` for Production (and Preview), then redeploy. Until this
+     is set, `/api/stats` answers 503 and the page quietly serves the last
+     daily snapshot instead.
 
 2. **Vercel** — vercel.com/new → import `cesarxdesign/cesar-stats`, keep
    defaults. Bookmark the production URL.
