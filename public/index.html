@@ -217,13 +217,19 @@
 
   let shown = null, views = null, live = false, livePending = true;
 
-  // Selectable ranges, matching the WINDOWS keys the snapshot ships.
-  const RANGES = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
-    key: 'd' + n,
-    label: 'Last ' + n + ' day' + (n === 1 ? '' : 's'),
-    sub: 'last ' + n + ' day' + (n === 1 ? '' : 's'),
-    prev: 'prev ' + (n === 1 ? 'day' : n + ' days'),
-  })).concat([{ key: 'd30', label: 'Last month', sub: 'last month', prev: 'prev month' }]);
+  // Selectable ranges, matching the WINDOWS keys the payload ships. d1 runs from
+  // midnight UTC to now, so it is today — named as such rather than "1 day".
+  const RANGES = [
+    { key: 'd1', label: 'Today', sub: 'today', prev: 'yesterday' },
+    ...[2, 3, 4, 5, 6, 7].map((n) => ({
+      key: 'd' + n,
+      label: 'Last ' + n + ' days',
+      sub: 'last ' + n + ' days',
+      prev: 'prev ' + n + ' days',
+    })),
+    { key: 'd30', label: 'Last month', sub: 'last month', prev: 'prev month' },
+  ];
+  const DEFAULT_RANGE = RANGES.find((r) => r.key === 'd7');
 
   const fmtDay = (iso, opts) =>
     new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
@@ -256,7 +262,7 @@
   // All four are assigned by render(); nothing here may read a payload, since
   // none has arrived yet at this point in the script.
   let source = null;          // the chosen Portugal variant
-  let range = RANGES[6];      // last 7 days
+  let range = DEFAULT_RANGE;
   let win = null;
   let days = [];
 
@@ -441,7 +447,7 @@
 
   function render() {
     source = ptBox.checked && views.with_pt ? views.with_pt : views.clean;
-    range = RANGES.find(r => r.key === rangeBox.value) || RANGES[6];
+    range = RANGES.find(r => r.key === rangeBox.value) || DEFAULT_RANGE;
     win = source.windows[range.key];
     days = source.daily;
 
