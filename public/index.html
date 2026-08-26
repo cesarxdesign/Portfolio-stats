@@ -121,6 +121,11 @@
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   tr.zero td { color: var(--text-muted); }
 
+  th.grp { color: var(--text-muted); font-weight: 500; }
+  th.sep, td.sep { border-left: 1px solid var(--border); padding-left: 14px; }
+  td.dim { color: var(--text-muted); }
+  .tscroll { overflow-x: auto; }
+
   .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
   .rows { display: grid; gap: 9px; }
   .row .line { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
@@ -146,7 +151,7 @@
       <span class="sw-track"><span class="sw-knob"></span></span>
       <span class="sw-label">Include Portugal</span>
     </label>
-    <span class="stale" id="stale">⚠ Stale data: last snapshot is more than a day old.</span>
+    <span class="stale" id="stale">⚠ Stale data: last snapshot is more than 3 hours old.</span>
   </header>
 
   <p id="err">Could not load data/latest.json. Refresh, or check the latest snapshot run on GitHub.</p>
@@ -175,9 +180,14 @@
     <table id="events-table"></table>
   </div>
 
+  <div class="card">
+    <h2>Visits per page</h2>
+    <div class="tscroll"><table id="pages-table"></table></div>
+  </div>
+
   <footer>
     Every number excludes bots and datacenter traffic (Boydton · Dulles · Paris · Amsterdam · exact-1920×1080 viewports).
-    <span id="pt-state"></span> Complete days only, UTC. Snapshot daily at ~4:00 Lisbon.
+    <span id="pt-state"></span> Ranges are UTC days and include today so far. Refreshed hourly.
     <a href="data/latest.json">Raw data</a>
   </footer>
 </div>
@@ -215,14 +225,12 @@
   const fmtDay = (iso, opts) =>
     new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, opts));
 
-  // Header: data-through date + snapshot time (Lisbon), stale warning past 28h
+  // Header: the cutoff is the snapshot itself now that today is included.
   const gen = new Date(data.generated_at);
   const snapTime = gen.toLocaleTimeString('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit' });
   const snapDay = gen.toLocaleDateString('en-GB', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short' });
-  document.getElementById('asof').textContent =
-    'data through ' + fmtDay(data.data_through, { weekday: 'short', day: 'numeric', month: 'short' }) +
-    ' · snapshot ' + snapDay + ', ' + snapTime;
-  if (Date.now() - gen.getTime() > 28 * 3600 * 1000) {
+  document.getElementById('asof').textContent = 'data through ' + snapDay + ', ' + snapTime;
+  if (Date.now() - gen.getTime() > 3 * 3600 * 1000) {
     document.getElementById('stale').classList.add('on');
   }
 
@@ -258,7 +266,8 @@
     ).join('');
   }
 
-  // Column chart: daily visitors over the full 30 days, whatever the range
+  // Column chart: daily visitors over the full 30 days, whatever the range.
+  // The last column is today so far, so it is drawn faded and labelled as partial.
   const box = document.getElementById('chart-box');
   const tip = document.getElementById('tip');
   const H = 190, PAD_T = 18, PAD_B = 22, PAD_L = 26;
@@ -307,7 +316,11 @@
           ' H' + (x0 + barW - r) +
           ' Q' + (x0 + barW) + ' ' + y(d.visitors) + ' ' + (x0 + barW) + ' ' + (y(d.visitors) + r) +
           ' V' + y(0) + ' Z';
-        svg.appendChild(el('path', { d: path, fill: css('--accent'), 'data-i': i }));
+        const partial = i === days.length - 1;
+        svg.appendChild(el('path', {
+          d: path, fill: css('--accent'), 'data-i': i,
+          'fill-opacity': partial ? 0.45 : 1,
+        }));
       }
       // x labels: first day, max day, last day
       if (i === 0 || i === days.length - 1) {
@@ -329,6 +342,7 @@
         const bar = svg.querySelector('[data-i="' + i + '"]');
         if (bar) bar.setAttribute('fill', css('--accent-hover'));
         tip.innerHTML = '<span class="t-day">' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
+          (i === days.length - 1 ? ' · so far' : '') +
           '</span> · ' + d.visitors + ' visitor' + (d.visitors === 1 ? '' : 's') + ' · ' + d.pageviews + ' pageview' + (d.pageviews === 1 ? '' : 's');
         tip.style.display = 'block';
         const tw = tip.offsetWidth;
@@ -353,8 +367,9 @@
   function renderDaily() {
     document.getElementById('daily-table').innerHTML =
       '<tr><th>Day</th><th class="num">Visitors</th><th class="num">Pageviews</th></tr>' +
-      days.map(d =>
+      days.map((d, i) =>
         '<tr' + (d.visitors === 0 ? ' class="zero"' : '') + '><td>' + fmtDay(d.day, { weekday: 'short', day: 'numeric', month: 'short' }) +
+        (i === days.length - 1 ? ' · so far' : '') +
         '</td><td class="num">' + d.visitors + '</td><td class="num">' + d.pageviews + '</td></tr>'
       ).join('');
   }
@@ -389,6 +404,29 @@
       ).join('');
   }
 
+  // Visits per page: every path ever seen, all-time totals beside the range
+  function renderPagesTable() {
+    const el = document.getElementById('pages-table');
+    const list = source.pages_table || [];
+    if (!list.length) {
+      el.innerHTML = '<tr><td class="empty-note">No pages recorded yet.</td></tr>';
+      return;
+    }
+    el.innerHTML =
+      '<tr><th></th><th class="num grp sep" colspan="2">All time</th>' +
+      '<th class="num grp sep" colspan="2">' + range.label + '</th></tr>' +
+      '<tr><th>Page</th><th class="num sep">Visits</th><th class="num">Visitors</th>' +
+      '<th class="num sep">Visits</th><th class="num">Visitors</th></tr>' +
+      list.map(r => {
+        const w = r.w[range.key] || { pageviews: 0, visitors: 0 };
+        const dim = w.pageviews === 0 ? ' dim' : '';
+        return '<tr><td>' + esc(r.path === '/' ? '/home' : r.path) + '</td>' +
+          '<td class="num sep">' + r.all_pageviews + '</td><td class="num">' + r.all_visitors + '</td>' +
+          '<td class="num sep' + dim + '">' + w.pageviews + '</td>' +
+          '<td class="num' + dim + '">' + w.visitors + '</td></tr>';
+      }).join('');
+  }
+
   function render() {
     source = ptBox.checked && views.with_pt ? views.with_pt : views.clean;
     range = RANGES.find(r => r.key === rangeBox.value) || RANGES[6];
@@ -407,6 +445,7 @@
     renderDaily();
     renderLists();
     renderEvents();
+    renderPagesTable();
   }
 
   const savedRange = localStorage.getItem('cxd-stats-range');

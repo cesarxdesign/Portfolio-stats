@@ -2,10 +2,10 @@ name: Daily snapshot
 
 on:
   schedule:
-    # 03:00 and 04:00 UTC: one of the two is 4am in Lisbon year-round
-    # (WEST = UTC+1 in summer, WET = UTC in winter). The second run
-    # simply refreshes the snapshot; both land well before 8am.
-    - cron: '0 3,4 * * *'
+    # Hourly. The board includes today so far, so a once-a-day snapshot would
+    # show today as empty until the following morning. Each run rewrites
+    # latest.json and the current day's dated file.
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "snapshot $(date -u +%F)"
+            git commit -m "snapshot $(date -u +'%F %H:%M')"
             git push
           fi

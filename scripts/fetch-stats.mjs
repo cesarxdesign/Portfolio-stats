@@ -36,11 +36,14 @@ const NO_PT = `
 const WINDOWS = [1, 2, 3, 4, 5, 6, 7, 30].map((days) => ({ key: `d${days}`, days }));
 const LONGEST = 30;
 
-// Complete days only: [today-N 00:00 UTC, today 00:00 UTC), and the equal-length
-// period immediately before it, for the deltas.
-const inW = (n) => `timestamp >= toStartOfDay(now()) - INTERVAL ${n} DAY AND timestamp < toStartOfDay(now())`;
+// A range of N calendar days ending right now: today so far, plus the N-1
+// complete days before it. The deltas compare against the N complete days
+// immediately preceding that.
+const inW = (n) => `timestamp >= toStartOfDay(now()) - INTERVAL ${n - 1} DAY AND timestamp <= now()`;
 const inPrev = (n) =>
-  `timestamp >= toStartOfDay(now()) - INTERVAL ${2 * n} DAY AND timestamp < toStartOfDay(now()) - INTERVAL ${n} DAY`;
+  `timestamp >= toStartOfDay(now()) - INTERVAL ${2 * n - 1} DAY AND timestamp < toStartOfDay(now()) - INTERVAL ${n - 1} DAY`;
+// Outer scan bound for a query: far enough back to cover every window it uses.
+const since = (n) => `timestamp >= toStartOfDay(now()) - INTERVAL ${n} DAY AND timestamp <= now()`;
 
 const CUSTOM_EVENTS = ['project_open', 'outbound_click', 'section_view', 'scroll_depth'];
 
@@ -70,6 +73,12 @@ async function hogql(query) {
   );
 }
 
+// "All time" needs a floor to stay off an unbounded scan, so take the project's
+// first event and use its day. Under PRINT_SQL there is no result to read, so
+// fall back to a date safely before this project existed.
+const firstEvent = (await hogql(`SELECT min(timestamp) AS t FROM events`))[0]?.t;
+const ALL_TIME = `timestamp >= toDate('${String(firstEvent ?? '2020-01-01').slice(0, 10)}') AND timestamp <= now()`;
+
 // A grouped list (pages / sources / countries) sliced per window: one query
 // returns every window as its own pair of columns, sorted and trimmed here.
 function sliceList(rows, nameKey, sortBy) {
@@ -94,27 +103,30 @@ async function collect(FILTER) {
     uniqIf(person_id, ${inPrev(w.days)}) AS pv_${w.key},
     countIf(${inPrev(w.days)}) AS pp_${w.key}`)}
     FROM events
-    WHERE event = '$pageview' AND ${inW(2 * LONGEST)} ${FILTER}`);
+    WHERE event = '$pageview' AND ${since(2 * LONGEST - 1)} ${FILTER}`);
   const tot = totalsRows[0] ?? {};
 
   const dailyRows = await hogql(`
     SELECT toDate(timestamp) AS day, uniq(person_id) AS visitors, count() AS pageviews
     FROM events
-    WHERE event = '$pageview' AND ${inW(LONGEST)} ${FILTER}
+    WHERE event = '$pageview' AND ${since(LONGEST - 1)} ${FILTER}
     GROUP BY day ORDER BY day`);
 
+  // Scanned over all of history, so the same rows give both the per-range
+  // numbers and the all-time totals for the pages table.
   const pagesRows = await hogql(`
     SELECT coalesce(properties.$pathname, '?') AS path,
+    count() AS all_p, uniq(person_id) AS all_v,
     ${perWindow((w) => `countIf(${inW(w.days)}) AS p_${w.key}, uniqIf(person_id, ${inW(w.days)}) AS v_${w.key}`)}
     FROM events
-    WHERE event = '$pageview' AND ${inW(LONGEST)} ${FILTER}
+    WHERE event = '$pageview' AND ${ALL_TIME} ${FILTER}
     GROUP BY path LIMIT 200`);
 
   const sourcesRows = await hogql(`
     SELECT coalesce(nullIf(properties.$referring_domain, ''), '$direct') AS source,
     ${perWindow((w) => `countIf(${inW(w.days)}) AS p_${w.key}, uniqIf(person_id, ${inW(w.days)}) AS v_${w.key}`)}
     FROM events
-    WHERE event = '$pageview' AND ${inW(LONGEST)}
+    WHERE event = '$pageview' AND ${since(LONGEST - 1)}
       AND coalesce(properties.$referring_domain, '') != coalesce(properties.$host, '') ${FILTER}
     GROUP BY source LIMIT 200`);
 
@@ -122,22 +134,22 @@ async function collect(FILTER) {
     SELECT coalesce(nullIf(properties.$geoip_country_name, ''), 'Unknown') AS country,
     ${perWindow((w) => `countIf(${inW(w.days)}) AS p_${w.key}, uniqIf(person_id, ${inW(w.days)}) AS v_${w.key}`)}
     FROM events
-    WHERE event = '$pageview' AND ${inW(LONGEST)} ${FILTER}
+    WHERE event = '$pageview' AND ${since(LONGEST - 1)} ${FILTER}
     GROUP BY country LIMIT 200`);
 
   const eventsRows = await hogql(`
     SELECT event,
     ${perWindow((w) => `countIf(${inW(w.days)}) AS h_${w.key}, uniqIf(person_id, ${inW(w.days)}) AS v_${w.key}`)}
     FROM events
-    WHERE event IN (${CUSTOM_EVENTS.map((e) => `'${e}'`).join(', ')}) AND ${inW(LONGEST)} ${FILTER}
+    WHERE event IN (${CUSTOM_EVENTS.map((e) => `'${e}'`).join(', ')}) AND ${since(LONGEST - 1)} ${FILTER}
     GROUP BY event`);
 
   // Dense-fill the daily series: every one of the 30 complete days, zeros included.
   const byDay = new Map(dailyRows.map((r) => [r.day, r]));
   const daily = [];
-  const end = new Date(); // walk backward from yesterday (UTC), 30 days
+  const end = new Date(); // walk backward from today (UTC), 30 days, today last
   end.setUTCHours(0, 0, 0, 0);
-  for (let i = LONGEST; i >= 1; i--) {
+  for (let i = LONGEST - 1; i >= 0; i--) {
     const d = new Date(end.getTime() - i * 86400000);
     const key = d.toISOString().slice(0, 10);
     const row = byDay.get(key);
@@ -145,6 +157,16 @@ async function collect(FILTER) {
   }
 
   const pages = sliceList(pagesRows, 'path', 'pageviews');
+
+  // Every path ever seen, all-time totals first, each range hung off it.
+  const pagesTable = pagesRows
+    .map((r) => ({
+      path: r.path,
+      all_pageviews: r.all_p,
+      all_visitors: r.all_v,
+      w: Object.fromEntries(WINDOWS.map((w) => [w.key, { pageviews: r[`p_${w.key}`], visitors: r[`v_${w.key}`] }])),
+    }))
+    .sort((a, b) => b.all_pageviews - a.all_pageviews || b.all_visitors - a.all_visitors);
   const sources = sliceList(sourcesRows, 'source', 'visitors');
   const countries = sliceList(countriesRows, 'country', 'visitors');
 
@@ -167,7 +189,7 @@ async function collect(FILTER) {
     };
   }
 
-  return { daily, windows };
+  return { daily, windows, pages_table: pagesTable };
 }
 
 const clean = await collect(BOTS + NO_PT);
