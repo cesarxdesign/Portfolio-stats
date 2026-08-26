@@ -253,10 +253,12 @@
     .map((r) => '<option value="' + r.key + '">' + r.label + '</option>')
     .join('');
 
-  let source = views.clean;   // the chosen Portugal variant
+  // All four are assigned by render(); nothing here may read a payload, since
+  // none has arrived yet at this point in the script.
+  let source = null;          // the chosen Portugal variant
   let range = RANGES[6];      // last 7 days
-  let win = source.windows[range.key];
-  let days = source.daily;
+  let win = null;
+  let days = [];
 
   // Stat tiles
   const delta = (cur, prev) => {
@@ -283,6 +285,7 @@
   const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 
   function drawChart() {
+    if (!days.length) return;
     const W = box.clientWidth;
     const max = Math.max(1, ...days.map(d => d.visitors));
     const step = max <= 5 ? 1 : max <= 10 ? 5 : max <= 30 ? 10 : Math.ceil(max / 30) * 10;
