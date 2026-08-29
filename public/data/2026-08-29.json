@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T15:17:28.165Z",
+  "generated_at": "2026-08-29T15:20:27.344Z",
   "data_through": "2026-08-29",
   "ranges": [
     "d1",
@@ -216,7 +216,29 @@
               }
             ]
           },
-          "trajectories": [],
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 2,
             "pageviews": 6,
@@ -304,6 +326,34 @@
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
               ],
               "visits": 1
             }
@@ -427,6 +477,42 @@
                 "/starcount"
               ],
               "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
             }
           ],
           "totals": {
@@ -548,6 +634,19 @@
             {
               "pages": [
                 "/",
+                "/confirmo"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
                 "/confirmo",
                 "/mara",
                 "/starcount",
@@ -561,6 +660,29 @@
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -688,6 +810,19 @@
           "trajectories": [
             {
               "pages": [
+                "/"
+              ],
+              "visits": 5
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
                 "/",
                 "/confirmo",
                 "/mara",
@@ -716,7 +851,24 @@
             },
             {
               "pages": [
+                "/",
+                "/confirmo",
                 "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -849,6 +1001,19 @@
           "trajectories": [
             {
               "pages": [
+                "/"
+              ],
+              "visits": 5
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
                 "/",
                 "/confirmo",
                 "/mara",
@@ -877,7 +1042,24 @@
             },
             {
               "pages": [
+                "/",
+                "/confirmo",
                 "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -1020,6 +1202,39 @@
               "pages": [
                 "/"
               ],
+              "visits": 19
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 4
+            },
+            {
+              "pages": [
+                "/confirmo"
+              ],
+              "visits": 4
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/starcount"
+              ],
               "visits": 2
             },
             {
@@ -1063,7 +1278,36 @@
               "pages": [
                 "/",
                 "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
                 "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount"
               ],
               "visits": 1
             },
@@ -1661,7 +1905,14 @@
             "opened": 0,
             "first_opens": []
           },
-          "trajectories": [],
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 1,
             "pageviews": 1,
@@ -1723,7 +1974,29 @@
               }
             ]
           },
-          "trajectories": [],
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 6
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 7,
             "pageviews": 11,
@@ -1812,10 +2085,38 @@
           "trajectories": [
             {
               "pages": [
+                "/"
+              ],
+              "visits": 7
+            },
+            {
+              "pages": [
                 "/",
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -1928,6 +2229,12 @@
           "trajectories": [
             {
               "pages": [
+                "/"
+              ],
+              "visits": 14
+            },
+            {
+              "pages": [
                 "/",
                 "/confirmo",
                 "/mara",
@@ -1947,7 +2254,31 @@
             },
             {
               "pages": [
+                "/",
+                "/confirmo",
                 "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -2077,7 +2408,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 3
+              "visits": 23
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 2
             },
             {
               "pages": [
@@ -2095,6 +2433,29 @@
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -2229,7 +2590,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 6
+              "visits": 39
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 3
             },
             {
               "pages": [
@@ -2256,6 +2624,29 @@
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -2395,7 +2786,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 7
+              "visits": 42
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 3
             },
             {
               "pages": [
@@ -2422,6 +2820,29 @@
                 "/confirmo",
                 "/mara",
                 "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
               ],
               "visits": 1
             }
@@ -2577,55 +2998,192 @@
               "pages": [
                 "/"
               ],
-              "visits": 23
-            },
-            {
-              "pages": [
-                "/penfold"
-              ],
-              "visits": 10
-            },
-            {
-              "pages": [
-                "/cable"
-              ],
-              "visits": 8
+              "visits": 131
             },
             {
               "pages": [
                 "/confirmo"
               ],
-              "visits": 8
-            },
-            {
-              "pages": [
-                "/starcount"
-              ],
-              "visits": 8
+              "visits": 38
             },
             {
               "pages": [
                 "/mara"
               ],
-              "visits": 7
+              "visits": 36
+            },
+            {
+              "pages": [
+                "/penfold"
+              ],
+              "visits": 34
+            },
+            {
+              "pages": [
+                "/starcount"
+              ],
+              "visits": 29
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 27
+            },
+            {
+              "pages": [
+                "/cable"
+              ],
+              "visits": 21
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 15
             },
             {
               "pages": [
                 "/",
                 "/penfold"
               ],
-              "visits": 4
+              "visits": 8
             },
             {
               "pages": [
                 "/confirmo",
                 "/"
               ],
+              "visits": 6
+            },
+            {
+              "pages": [
+                "/mara",
+                "/"
+              ],
+              "visits": 6
+            },
+            {
+              "pages": [
+                "/cable/"
+              ],
+              "visits": 5
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
+              ],
+              "visits": 4
+            },
+            {
+              "pages": [
+                "/live-www/confirmo/index.html"
+              ],
+              "visits": 4
+            },
+            {
+              "pages": [
+                "/",
+                "/done"
+              ],
               "visits": 3
             },
             {
               "pages": [
-                "/done"
+                "/",
+                "/starcount"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/live-www/mara/index.html"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/live-www/penfold/index.html"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/mara/"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/live-www/penfold/index.html",
+                "/live-www/cable/index.html",
+                "/live-www/done/index.html",
+                "/live-www/confirmo/index.html"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
+                "/penfold",
+                "/cable"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/cable",
+                "/"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/starcount",
+                "/"
               ],
               "visits": 2
             },
@@ -2692,6 +3250,29 @@
                 "/confirmo",
                 "/mara",
                 "/starcount",
+                "/mara",
+                "/confirmo",
+                "/cable",
+                "/penfold",
+                "/done",
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
                 "/penfold",
                 "/cable",
                 "/done",
@@ -2748,6 +3329,66 @@
             },
             {
               "pages": [
+                "/",
+                "/done",
+                "/confirmo",
+                "/done",
+                "/cable",
+                "/penfold",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/done",
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/done",
+                "/cable",
+                "/",
+                "/penfold",
+                "/starcount",
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
                 "/confirmo",
                 "/mara",
                 "/starcount",
@@ -2757,6 +3398,20 @@
                 "/penfold",
                 "/cable",
                 "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/confirmo",
+                "/cable",
+                "/confirmo",
+                "/done",
+                "/mara",
+                "/penfold",
+                "/starcount",
+                "/penfold"
               ],
               "visits": 1
             },
@@ -2792,6 +3447,86 @@
                 "/confirmo",
                 "/mara",
                 "/starcount",
+                "/penfold",
+                "/cable",
+                "/penfold",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/done/index.html",
+                "/live-www/confirmo/index.html",
+                "/live-www/cable/index.html",
+                "/live-www/confirmo/index.html",
+                "/live-www/done/index.html",
+                "/live-www/mara/index.html",
+                "/live-www/penfold/index.html",
+                "/live-www/starcount/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/penfold/index.html",
+                "/live-www/confirmo/index.html",
+                "/live-www/mara/index.html",
+                "/live-www/starcount/index.html",
+                "/live-www/confirmo/index.html",
+                "/live-www/mara/index.html",
+                "/live-www/starcount/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/cable",
+                "/done",
+                "/",
+                "/confirmo",
+                "/penfold",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/penfold",
+                "/",
+                "/done",
+                "/cable"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/confirmo",
+                "/",
+                "/mara",
+                "/starcount",
                 "/penfold"
               ],
               "visits": 1
@@ -2809,7 +3544,7 @@
               "pages": [
                 "/",
                 "/confirmo",
-                "/mara",
+                "/",
                 "/starcount"
               ],
               "visits": 1
@@ -2820,6 +3555,33 @@
                 "/done",
                 "/",
                 "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara",
+                "/",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara",
+                "/cable",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/penfold",
+                "/starcount",
+                "/"
               ],
               "visits": 1
             },
@@ -2843,27 +3605,36 @@
             },
             {
               "pages": [
-                "/live-www/penfold/index.html",
-                "/live-www/cable/index.html",
-                "/live-www/done/index.html",
-                "/live-www/confirmo/index.html"
+                "/confirmo",
+                "/penfold",
+                "/done",
+                "/mara"
               ],
               "visits": 1
             },
             {
               "pages": [
-                "/penfold",
-                "/cable",
-                "/done",
-                "/confirmo"
+                "/live-www/index.html",
+                "/live-www/penfold/index.html",
+                "/live-www/mara/index.html",
+                "/live-www/penfold/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/starcount/index.html",
+                "/live-www/penfold/index.html",
+                "/live-www/cable/index.html",
+                "/live-www/done/index.html"
               ],
               "visits": 1
             },
             {
               "pages": [
                 "/",
-                "/confirmo",
-                "/mara"
+                "/starcount",
+                "/confirmo"
               ],
               "visits": 1
             },
@@ -2872,6 +3643,22 @@
                 "/",
                 "/starcount",
                 "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/cable",
+                "/penfold",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/confirmo",
+                "/",
+                "/done"
               ],
               "visits": 1
             },
@@ -2885,13 +3672,7 @@
             },
             {
               "pages": [
-                "/",
-                "/cable"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
+                "/starcount",
                 "/",
                 "/confirmo"
               ],
@@ -2900,14 +3681,7 @@
             {
               "pages": [
                 "/",
-                "/mara"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/starcount"
+                "/cable"
               ],
               "visits": 1
             },
@@ -2920,20 +3694,54 @@
             },
             {
               "pages": [
-                "/penfold",
-                "/"
+                "/confirmo",
+                "/mara"
               ],
               "visits": 1
             },
             {
               "pages": [
-                "/live-www/confirmo/index.html"
+                "/done",
+                "/cable"
               ],
               "visits": 1
             },
             {
               "pages": [
+                "/live-www/mara/index.html",
                 "/live-www/penfold/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/mara/index.html",
+                "/live-www/starcount/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/cable/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/starcount/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/penfold/"
               ],
               "visits": 1
             }
