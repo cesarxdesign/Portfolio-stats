@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T09:51:17.080Z",
+  "generated_at": "2026-08-29T15:05:36.779Z",
   "data_through": "2026-08-29",
   "ranges": [
     "d1",
@@ -167,6 +167,11 @@
       ],
       "windows": {
         "d1": {
+          "home_funnel": {
+            "landed": 0,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 0,
             "pageviews": 0,
@@ -200,6 +205,11 @@
           ]
         },
         "d2": {
+          "home_funnel": {
+            "landed": 2,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 2,
             "pageviews": 6,
@@ -266,6 +276,11 @@
           ]
         },
         "d3": {
+          "home_funnel": {
+            "landed": 4,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 4,
             "pageviews": 12,
@@ -352,6 +367,11 @@
           ]
         },
         "d4": {
+          "home_funnel": {
+            "landed": 6,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 6,
             "pageviews": 20,
@@ -453,6 +473,11 @@
           ]
         },
         "d5": {
+          "home_funnel": {
+            "landed": 8,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 8,
             "pageviews": 23,
@@ -559,6 +584,11 @@
           ]
         },
         "d6": {
+          "home_funnel": {
+            "landed": 13,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 13,
             "pageviews": 32,
@@ -670,6 +700,11 @@
           ]
         },
         "d7": {
+          "home_funnel": {
+            "landed": 13,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 13,
             "pageviews": 32,
@@ -781,6 +816,11 @@
           ]
         },
         "d30": {
+          "home_funnel": {
+            "landed": 33,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
             "visitors": 43,
             "pageviews": 72,
@@ -1357,21 +1397,44 @@
         },
         {
           "day": "2026-08-29",
-          "visitors": 0,
-          "pageviews": 0
+          "visitors": 1,
+          "pageviews": 1
         }
       ],
       "windows": {
         "d1": {
+          "home_funnel": {
+            "landed": 1,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 0,
-            "pageviews": 0,
+            "visitors": 1,
+            "pageviews": 1,
             "prev_visitors": 6,
             "prev_pageviews": 10
           },
-          "top_pages": [],
-          "sources": [],
-          "countries": [],
+          "top_pages": [
+            {
+              "path": "/",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "sources": [
+            {
+              "source": "$direct",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "countries": [
+            {
+              "country": "Portugal",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
           "events": [
             {
               "event": "project_open",
@@ -1396,17 +1459,22 @@
           ]
         },
         "d2": {
+          "home_funnel": {
+            "landed": 7,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 6,
-            "pageviews": 10,
+            "visitors": 7,
+            "pageviews": 11,
             "prev_visitors": 12,
             "prev_pageviews": 22
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 7,
-              "visitors": 6
+              "pageviews": 8,
+              "visitors": 7
             },
             {
               "path": "/confirmo",
@@ -1422,8 +1490,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 6,
-              "visitors": 5
+              "pageviews": 7,
+              "visitors": 6
             },
             {
               "source": "www.linkedin.com",
@@ -1434,8 +1502,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 4,
-              "visitors": 4
+              "pageviews": 5,
+              "visitors": 5
             },
             {
               "country": "United States",
@@ -1467,17 +1535,22 @@
           ]
         },
         "d3": {
+          "home_funnel": {
+            "landed": 10,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 9,
-            "pageviews": 17,
+            "visitors": 10,
+            "pageviews": 18,
             "prev_visitors": 37,
             "prev_pageviews": 49
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 10,
-              "visitors": 9
+              "pageviews": 11,
+              "visitors": 10
             },
             {
               "path": "/confirmo",
@@ -1498,8 +1571,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 11,
-              "visitors": 7
+              "pageviews": 12,
+              "visitors": 8
             },
             {
               "source": "www.linkedin.com",
@@ -1515,8 +1588,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 5,
-              "visitors": 5
+              "pageviews": 6,
+              "visitors": 6
             },
             {
               "country": "United States",
@@ -1558,17 +1631,22 @@
           ]
         },
         "d4": {
+          "home_funnel": {
+            "landed": 19,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 18,
-            "pageviews": 32,
+            "visitors": 19,
+            "pageviews": 33,
             "prev_visitors": 34,
             "prev_pageviews": 40
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 20,
-              "visitors": 18
+              "pageviews": 21,
+              "visitors": 19
             },
             {
               "path": "/confirmo",
@@ -1594,8 +1672,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 26,
-              "visitors": 16
+              "pageviews": 27,
+              "visitors": 17
             },
             {
               "source": "www.linkedin.com",
@@ -1611,8 +1689,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 12,
-              "visitors": 12
+              "pageviews": 13,
+              "visitors": 13
             },
             {
               "country": "United States",
@@ -1664,17 +1742,22 @@
           ]
         },
         "d5": {
+          "home_funnel": {
+            "landed": 29,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 28,
-            "pageviews": 44,
+            "visitors": 29,
+            "pageviews": 45,
             "prev_visitors": 37,
             "prev_pageviews": 55
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 31,
-              "visitors": 28
+              "pageviews": 32,
+              "visitors": 29
             },
             {
               "path": "/confirmo",
@@ -1700,8 +1783,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 38,
-              "visitors": 26
+              "pageviews": 39,
+              "visitors": 27
             },
             {
               "source": "www.linkedin.com",
@@ -1717,8 +1800,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 21,
-              "visitors": 20
+              "pageviews": 22,
+              "visitors": 21
             },
             {
               "country": "United States",
@@ -1775,17 +1858,22 @@
           ]
         },
         "d6": {
+          "home_funnel": {
+            "landed": 47,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 46,
-            "pageviews": 66,
+            "visitors": 47,
+            "pageviews": 67,
             "prev_visitors": 21,
             "prev_pageviews": 35
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 50,
-              "visitors": 46
+              "pageviews": 51,
+              "visitors": 47
             },
             {
               "path": "/confirmo",
@@ -1811,8 +1899,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 58,
-              "visitors": 43
+              "pageviews": 59,
+              "visitors": 44
             },
             {
               "source": "www.linkedin.com",
@@ -1828,8 +1916,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 34,
-              "visitors": 33
+              "pageviews": 35,
+              "visitors": 34
             },
             {
               "country": "United States",
@@ -1891,17 +1979,22 @@
           ]
         },
         "d7": {
+          "home_funnel": {
+            "landed": 50,
+            "clicked": 0,
+            "first_clicks": []
+          },
           "totals": {
-            "visitors": 49,
-            "pageviews": 69,
+            "visitors": 50,
+            "pageviews": 70,
             "prev_visitors": 21,
             "prev_pageviews": 35
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 53,
-              "visitors": 49
+              "pageviews": 54,
+              "visitors": 50
             },
             {
               "path": "/confirmo",
@@ -1927,8 +2020,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 61,
-              "visitors": 46
+              "pageviews": 62,
+              "visitors": 47
             },
             {
               "source": "www.linkedin.com",
@@ -1944,8 +2037,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 37,
-              "visitors": 36
+              "pageviews": 38,
+              "visitors": 37
             },
             {
               "country": "United States",
@@ -2007,17 +2100,39 @@
           ]
         },
         "d30": {
+          "home_funnel": {
+            "landed": 186,
+            "clicked": 9,
+            "first_clicks": [
+              {
+                "project": "mara",
+                "visitors": 3
+              },
+              {
+                "project": "starcount",
+                "visitors": 3
+              },
+              {
+                "project": "confirmo",
+                "visitors": 2
+              },
+              {
+                "project": "done",
+                "visitors": 1
+              }
+            ]
+          },
           "totals": {
-            "visitors": 397,
-            "pageviews": 1126,
+            "visitors": 398,
+            "pageviews": 1127,
             "prev_visitors": 105,
             "prev_pageviews": 238
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 346,
-              "visitors": 209
+              "pageviews": 347,
+              "visitors": 210
             },
             {
               "path": "/mara",
@@ -2078,8 +2193,8 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 855,
-              "visitors": 330
+              "pageviews": 856,
+              "visitors": 331
             },
             {
               "source": "localhost:8899",
@@ -2110,8 +2225,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 1054,
-              "visitors": 354
+              "pageviews": 1055,
+              "visitors": 355
             },
             {
               "country": "United States",
@@ -2196,40 +2311,40 @@
       "pages_table": [
         {
           "path": "/",
-          "all_pageviews": 469,
-          "all_visitors": 267,
+          "all_pageviews": 470,
+          "all_visitors": 268,
           "w": {
             "d1": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d2": {
-              "pageviews": 7,
-              "visitors": 6
+              "pageviews": 8,
+              "visitors": 7
             },
             "d3": {
-              "pageviews": 10,
-              "visitors": 9
+              "pageviews": 11,
+              "visitors": 10
             },
             "d4": {
-              "pageviews": 20,
-              "visitors": 18
+              "pageviews": 21,
+              "visitors": 19
             },
             "d5": {
-              "pageviews": 31,
-              "visitors": 28
+              "pageviews": 32,
+              "visitors": 29
             },
             "d6": {
-              "pageviews": 50,
-              "visitors": 46
+              "pageviews": 51,
+              "visitors": 47
             },
             "d7": {
-              "pageviews": 53,
-              "visitors": 49
+              "pageviews": 54,
+              "visitors": 50
             },
             "d30": {
-              "pageviews": 346,
-              "visitors": 209
+              "pageviews": 347,
+              "visitors": 210
             }
           }
         },
