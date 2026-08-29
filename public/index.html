@@ -106,6 +106,13 @@
   .funnel .top-click { font-size: 14px; color: var(--text-secondary); }
   .funnel .top-click strong { color: var(--text-primary); }
 
+  .traj { display: grid; gap: 7px; font-size: 13.5px; }
+  details .traj { margin-top: 8px; }
+  .traj .t { display: flex; justify-content: space-between; gap: 14px; }
+  .traj .seq { min-width: 0; }
+  .traj .sep { color: var(--text-muted); }
+  .traj .n { flex: none; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+
   .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .tile .label { font-size: 13px; color: var(--text-secondary); }
   .tile .value { font-size: 30px; font-weight: 600; line-height: 1.25; margin-top: 2px; }
@@ -170,6 +177,11 @@
   <div class="card funnel" id="funnel-card" hidden>
     <h2 id="h-funnel">Home → projects</h2>
     <div id="funnel-body"></div>
+  </div>
+
+  <div class="card" id="traj-card" hidden>
+    <h2 id="h-traj">Trajectories</h2>
+    <div id="traj-body"></div>
   </div>
 
   <div class="tiles" id="tiles"></div>
@@ -281,42 +293,69 @@
   let days = [];
 
   // Home → projects: of the visitors whose first pageview in the range was
-  // home, how many clicked through to any project, and which project the
-  // converting visitors clicked first.
+  // home, how many went on to open any project page, and which project the
+  // converting visitors reached first. Pageview-based on purpose: the
+  // project_open click event loses same-tab navigations, so it undercounts.
   const PROJECT_NAMES = { mara: 'Mara', confirmo: 'Confirmo', starcount: 'Starcount', penfold: 'Penfold', cable: 'Cable', done: 'Done' };
   function renderFunnel() {
     const card = document.getElementById('funnel-card');
     const f = win.home_funnel;
-    if (!f) { card.hidden = true; return; } // snapshot predates the funnel
+    // Hidden on payloads that predate the pageview-based funnel.
+    if (!f || !f.first_opens) { card.hidden = true; return; }
     card.hidden = false;
     const body = document.getElementById('funnel-body');
     if (!f.landed) {
       body.innerHTML = '<div class="empty-note">No home landings in this range.</div>';
       return;
     }
-    const pct = Math.round(100 * f.clicked / f.landed);
+    const pct = Math.round(100 * f.opened / f.landed);
     const stat = (n, l, p) =>
       '<div><div class="value">' + n + (p == null ? '' : ' <span class="pct">' + p + '%</span>') + '</div>' +
       '<div class="label">' + l + '</div></div>';
     let topLine;
-    if (f.clicked) {
-      const best = f.first_clicks[0];
-      const ties = f.first_clicks.filter(x => x.visitors === best.visitors);
+    if (f.opened) {
+      const best = f.first_opens[0];
+      const ties = f.first_opens.filter(x => x.visitors === best.visitors);
       const names = ties.map(x => '<strong>' + esc(PROJECT_NAMES[x.project] || x.project) + '</strong>');
       topLine = ties.length > 1
-        ? 'First click ties between ' + names.join(' and ') + ' (' + best.visitors + ' each).'
-        : 'First click goes to ' + names[0] + ' most often (' + best.visitors + ' of ' + f.clicked + ').';
+        ? 'First stop ties between ' + names.join(' and ') + ' (' + best.visitors + ' each).'
+        : 'First stop is ' + names[0] + ' most often (' + best.visitors + ' of ' + f.opened + ').';
     } else {
-      topLine = 'No one clicked through to a project.';
+      topLine = 'No one went into a project.';
     }
     body.innerHTML =
       '<div class="stats">' +
         stat(f.landed, 'landed on home') +
-        stat(f.clicked, 'clicked a project', pct) +
-        stat(f.landed - f.clicked, 'clicked none', 100 - pct) +
+        stat(f.opened, 'opened a project', pct) +
+        stat(f.landed - f.opened, 'opened none', 100 - pct) +
       '</div>' +
-      '<div class="bar"><div class="clicked" style="width:' + (100 * f.clicked / f.landed) + '%"></div></div>' +
+      '<div class="bar"><div class="clicked" style="width:' + (100 * f.opened / f.landed) + '%"></div></div>' +
       '<div class="top-click">' + topLine + '</div>';
+  }
+
+  // Trajectories: every visit in the range as its page sequence, identical
+  // paths collapsed with a count. A visit is one PostHog session.
+  function renderTraj() {
+    const card = document.getElementById('traj-card');
+    const list = win.trajectories;
+    if (!list) { card.hidden = true; return; } // payload predates trajectories
+    card.hidden = false;
+    const body = document.getElementById('traj-body');
+    if (!list.length) {
+      body.innerHTML = '<div class="empty-note">No visits in this range.</div>';
+      return;
+    }
+    const row = (t) =>
+      '<div class="t"><span class="seq">' +
+      t.pages.map((p) => esc(p === '/' ? '/home' : p)).join('<span class="sep"> → </span>') +
+      '</span><span class="n">' + (t.visits > 1 ? '×' + t.visits : '') + '</span></div>';
+    const TOP = 12;
+    body.innerHTML =
+      '<div class="traj">' + list.slice(0, TOP).map(row).join('') + '</div>' +
+      (list.length > TOP
+        ? '<details><summary>All ' + list.length + ' paths</summary><div class="traj">' +
+          list.slice(TOP).map(row).join('') + '</div></details>'
+        : '');
   }
 
   // Stat tiles
@@ -505,6 +544,7 @@
     days = source.daily;
 
     document.getElementById('h-funnel').textContent = 'Home → projects · ' + range.sub;
+    document.getElementById('h-traj').textContent = 'Trajectories · ' + range.sub;
     document.getElementById('h-pages').textContent = 'Top pages · ' + range.sub;
     document.getElementById('h-sources').textContent = 'Sources · ' + range.sub;
     document.getElementById('h-countries').textContent = 'Countries · ' + range.sub;
@@ -513,6 +553,7 @@
       ptBox.checked ? 'Portugal (own visits) is counted in.' : 'Portugal (own visits) is excluded.';
 
     renderFunnel();
+    renderTraj();
     renderTiles();
     drawChart();
     renderDaily();
