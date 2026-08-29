@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T15:05:36.779Z",
+  "generated_at": "2026-08-29T15:17:28.165Z",
   "data_through": "2026-08-29",
   "ranges": [
     "d1",
@@ -169,9 +169,10 @@
         "d1": {
           "home_funnel": {
             "landed": 0,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 0,
+            "first_opens": []
           },
+          "trajectories": [],
           "totals": {
             "visitors": 0,
             "pageviews": 0,
@@ -207,9 +208,15 @@
         "d2": {
           "home_funnel": {
             "landed": 2,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 2,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 2
+              }
+            ]
           },
+          "trajectories": [],
           "totals": {
             "visitors": 2,
             "pageviews": 6,
@@ -278,9 +285,29 @@
         "d3": {
           "home_funnel": {
             "landed": 4,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 4,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 3
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 4,
             "pageviews": 12,
@@ -369,9 +396,39 @@
         "d4": {
           "home_funnel": {
             "landed": 6,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 6,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 5
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 6,
             "pageviews": 20,
@@ -475,9 +532,39 @@
         "d5": {
           "home_funnel": {
             "landed": 8,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 7,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 6
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 8,
             "pageviews": 23,
@@ -586,9 +673,54 @@
         "d6": {
           "home_funnel": {
             "landed": 13,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 9,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 8
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 13,
             "pageviews": 32,
@@ -702,9 +834,54 @@
         "d7": {
           "home_funnel": {
             "landed": 13,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 9,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 8
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 13,
             "pageviews": 32,
@@ -818,9 +995,85 @@
         "d30": {
           "home_funnel": {
             "landed": 33,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 15,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 10
+              },
+              {
+                "project": "starcount",
+                "visitors": 3
+              },
+              {
+                "project": "done",
+                "visitors": 1
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount",
+                "/confirmo",
+                "/cable"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/mara"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 43,
             "pageviews": 72,
@@ -1405,9 +1658,10 @@
         "d1": {
           "home_funnel": {
             "landed": 1,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 0,
+            "first_opens": []
           },
+          "trajectories": [],
           "totals": {
             "visitors": 1,
             "pageviews": 1,
@@ -1461,9 +1715,15 @@
         "d2": {
           "home_funnel": {
             "landed": 7,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 2,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 2
+              }
+            ]
           },
+          "trajectories": [],
           "totals": {
             "visitors": 7,
             "pageviews": 11,
@@ -1537,9 +1797,29 @@
         "d3": {
           "home_funnel": {
             "landed": 10,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 4,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 3
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 10,
             "pageviews": 18,
@@ -1633,9 +1913,45 @@
         "d4": {
           "home_funnel": {
             "landed": 19,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 6,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 5
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 19,
             "pageviews": 33,
@@ -1744,9 +2060,45 @@
         "d5": {
           "home_funnel": {
             "landed": 29,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 7,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 6
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 29,
             "pageviews": 45,
@@ -1860,9 +2212,54 @@
         "d6": {
           "home_funnel": {
             "landed": 47,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 9,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 8
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 6
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 47,
             "pageviews": 67,
@@ -1981,9 +2378,54 @@
         "d7": {
           "home_funnel": {
             "landed": 50,
-            "clicked": 0,
-            "first_clicks": []
+            "opened": 9,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 8
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 7
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 50,
             "pageviews": 70,
@@ -2102,26 +2544,400 @@
         "d30": {
           "home_funnel": {
             "landed": 186,
-            "clicked": 9,
-            "first_clicks": [
-              {
-                "project": "mara",
-                "visitors": 3
-              },
-              {
-                "project": "starcount",
-                "visitors": 3
-              },
+            "opened": 63,
+            "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 2
+                "visitors": 30
+              },
+              {
+                "project": "penfold",
+                "visitors": 12
               },
               {
                 "project": "done",
-                "visitors": 1
+                "visitors": 7
+              },
+              {
+                "project": "mara",
+                "visitors": 6
+              },
+              {
+                "project": "starcount",
+                "visitors": 6
+              },
+              {
+                "project": "cable",
+                "visitors": 2
               }
             ]
           },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 23
+            },
+            {
+              "pages": [
+                "/penfold"
+              ],
+              "visits": 10
+            },
+            {
+              "pages": [
+                "/cable"
+              ],
+              "visits": 8
+            },
+            {
+              "pages": [
+                "/confirmo"
+              ],
+              "visits": 8
+            },
+            {
+              "pages": [
+                "/starcount"
+              ],
+              "visits": 8
+            },
+            {
+              "pages": [
+                "/mara"
+              ],
+              "visits": 7
+            },
+            {
+              "pages": [
+                "/",
+                "/penfold"
+              ],
+              "visits": 4
+            },
+            {
+              "pages": [
+                "/confirmo",
+                "/"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/done",
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/",
+                "/done",
+                "/starcount",
+                "/",
+                "/mara",
+                "/starcount",
+                "/done",
+                "/",
+                "/done",
+                "/confirmo",
+                "/",
+                "/penfold",
+                "/",
+                "/confirmo",
+                "/starcount",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/cable",
+                "/penfold",
+                "/confirmo",
+                "/",
+                "/cable",
+                "/",
+                "/cable",
+                "/",
+                "/cable",
+                "/confirmo",
+                "/cable",
+                "/penfold",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/cable",
+                "/penfold",
+                "/starcount",
+                "/mara",
+                "/confirmo",
+                "/done",
+                "/cable",
+                "/done",
+                "/cable",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/done",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/confirmo",
+                "/done",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/done",
+                "/",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount",
+                "/confirmo",
+                "/cable"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/cable",
+                "/done",
+                "/cable",
+                "/done"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/penfold/index.html",
+                "/live-www/cable/index.html",
+                "/live-www/done/index.html",
+                "/live-www/confirmo/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/cable",
+                "/done",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/cable/index.html",
+                "/live-www/penfold/index.html",
+                "/live-www/starcount/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/cable"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/cable",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/penfold",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/confirmo/index.html"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/live-www/penfold/index.html"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
             "visitors": 398,
             "pageviews": 1127,
