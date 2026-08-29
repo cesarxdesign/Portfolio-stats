@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T15:20:27.344Z",
+  "generated_at": "2026-08-29T18:19:46.849Z",
   "data_through": "2026-08-29",
   "ranges": [
     "d1",
@@ -161,28 +161,58 @@
         },
         {
           "day": "2026-08-29",
-          "visitors": 0,
-          "pageviews": 0
+          "visitors": 1,
+          "pageviews": 1
         }
       ],
       "windows": {
         "d1": {
           "home_funnel": {
-            "landed": 0,
+            "landed": 1,
             "opened": 0,
             "first_opens": []
           },
-          "trajectories": [],
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 1
+            }
+          ],
           "totals": {
-            "visitors": 0,
-            "pageviews": 0,
+            "visitors": 1,
+            "pageviews": 1,
             "prev_visitors": 2,
             "prev_pageviews": 6
           },
-          "top_pages": [],
-          "sources": [],
-          "countries": [],
+          "top_pages": [
+            {
+              "path": "/",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "sources": [
+            {
+              "source": "www.linkedin.com",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "countries": [
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
           "events": [
+            {
+              "event": "scroll_depth",
+              "hits": 4,
+              "visitors": 1
+            },
             {
               "event": "project_open",
               "hits": 0,
@@ -197,17 +227,12 @@
               "event": "section_view",
               "hits": 0,
               "visitors": 0
-            },
-            {
-              "event": "scroll_depth",
-              "hits": 0,
-              "visitors": 0
             }
           ]
         },
         "d2": {
           "home_funnel": {
-            "landed": 2,
+            "landed": 3,
             "opened": 2,
             "first_opens": [
               {
@@ -217,6 +242,12 @@
             ]
           },
           "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 2
+            },
             {
               "pages": [
                 "/",
@@ -231,25 +262,19 @@
                 "/confirmo"
               ],
               "visits": 1
-            },
-            {
-              "pages": [
-                "/"
-              ],
-              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 2,
-            "pageviews": 6,
+            "visitors": 3,
+            "pageviews": 7,
             "prev_visitors": 4,
             "prev_pageviews": 14
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 3,
-              "visitors": 2
+              "pageviews": 4,
+              "visitors": 3
             },
             {
               "path": "/confirmo",
@@ -265,8 +290,8 @@
           "sources": [
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "$direct",
@@ -279,13 +304,18 @@
               "country": "United States",
               "pageviews": 6,
               "visitors": 2
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 24,
-              "visitors": 2
+              "hits": 28,
+              "visitors": 3
             },
             {
               "event": "section_view",
@@ -306,7 +336,7 @@
         },
         "d3": {
           "home_funnel": {
-            "landed": 4,
+            "landed": 5,
             "opened": 4,
             "first_opens": [
               {
@@ -320,6 +350,12 @@
             ]
           },
           "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 2
+            },
             {
               "pages": [
                 "/",
@@ -350,25 +386,19 @@
                 "/mara"
               ],
               "visits": 1
-            },
-            {
-              "pages": [
-                "/"
-              ],
-              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 4,
-            "pageviews": 12,
+            "visitors": 5,
+            "pageviews": 13,
             "prev_visitors": 9,
             "prev_pageviews": 20
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 5,
-              "visitors": 4
+              "pageviews": 6,
+              "visitors": 5
             },
             {
               "path": "/confirmo",
@@ -394,8 +424,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "app.greenhouse.io",
@@ -418,18 +448,23 @@
               "country": "Ireland",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
-              "event": "section_view",
-              "hits": 43,
+              "event": "scroll_depth",
+              "hits": 44,
               "visitors": 4
             },
             {
-              "event": "scroll_depth",
-              "hits": 40,
-              "visitors": 3
+              "event": "section_view",
+              "hits": 43,
+              "visitors": 4
             },
             {
               "event": "outbound_click",
@@ -445,7 +480,7 @@
         },
         "d4": {
           "home_funnel": {
-            "landed": 6,
+            "landed": 7,
             "opened": 6,
             "first_opens": [
               {
@@ -459,6 +494,12 @@
             ]
           },
           "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 2
+            },
             {
               "pages": [
                 "/",
@@ -507,25 +548,19 @@
                 "/mara"
               ],
               "visits": 1
-            },
-            {
-              "pages": [
-                "/"
-              ],
-              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 6,
-            "pageviews": 20,
+            "visitors": 7,
+            "pageviews": 21,
             "prev_visitors": 7,
             "prev_pageviews": 12
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 8,
-              "visitors": 6
+              "pageviews": 9,
+              "visitors": 7
             },
             {
               "path": "/confirmo",
@@ -556,8 +591,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "app.greenhouse.io",
@@ -590,18 +625,23 @@
               "country": "Ireland",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
-              "event": "section_view",
-              "hits": 70,
+              "event": "scroll_depth",
+              "hits": 74,
               "visitors": 6
             },
             {
-              "event": "scroll_depth",
+              "event": "section_view",
               "hits": 70,
-              "visitors": 5
+              "visitors": 6
             },
             {
               "event": "outbound_click",
@@ -617,7 +657,7 @@
         },
         "d5": {
           "home_funnel": {
-            "landed": 8,
+            "landed": 9,
             "opened": 7,
             "first_opens": [
               {
@@ -633,14 +673,14 @@
           "trajectories": [
             {
               "pages": [
-                "/",
-                "/confirmo"
+                "/"
               ],
-              "visits": 2
+              "visits": 3
             },
             {
               "pages": [
-                "/"
+                "/",
+                "/confirmo"
               ],
               "visits": 2
             },
@@ -688,16 +728,16 @@
             }
           ],
           "totals": {
-            "visitors": 8,
-            "pageviews": 23,
+            "visitors": 9,
+            "pageviews": 24,
             "prev_visitors": 9,
             "prev_pageviews": 16
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 10,
-              "visitors": 8
+              "pageviews": 11,
+              "visitors": 9
             },
             {
               "path": "/confirmo",
@@ -728,8 +768,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "app.greenhouse.io",
@@ -767,13 +807,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 74,
-              "visitors": 6
+              "hits": 78,
+              "visitors": 7
             },
             {
               "event": "section_view",
@@ -794,7 +839,7 @@
         },
         "d6": {
           "home_funnel": {
-            "landed": 13,
+            "landed": 14,
             "opened": 9,
             "first_opens": [
               {
@@ -812,7 +857,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 5
+              "visits": 6
             },
             {
               "pages": [
@@ -874,16 +919,16 @@
             }
           ],
           "totals": {
-            "visitors": 13,
-            "pageviews": 32,
+            "visitors": 14,
+            "pageviews": 33,
             "prev_visitors": 4,
             "prev_pageviews": 7
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 16,
-              "visitors": 13
+              "pageviews": 17,
+              "visitors": 14
             },
             {
               "path": "/confirmo",
@@ -914,8 +959,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 6,
-              "visitors": 2
+              "pageviews": 7,
+              "visitors": 3
             },
             {
               "source": "app.greenhouse.io",
@@ -958,13 +1003,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 104,
-              "visitors": 10
+              "hits": 108,
+              "visitors": 11
             },
             {
               "event": "section_view",
@@ -985,7 +1035,7 @@
         },
         "d7": {
           "home_funnel": {
-            "landed": 13,
+            "landed": 14,
             "opened": 9,
             "first_opens": [
               {
@@ -1003,7 +1053,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 5
+              "visits": 6
             },
             {
               "pages": [
@@ -1065,16 +1115,16 @@
             }
           ],
           "totals": {
-            "visitors": 13,
-            "pageviews": 32,
+            "visitors": 14,
+            "pageviews": 33,
             "prev_visitors": 4,
             "prev_pageviews": 7
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 16,
-              "visitors": 13
+              "pageviews": 17,
+              "visitors": 14
             },
             {
               "path": "/confirmo",
@@ -1105,8 +1155,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 6,
-              "visitors": 2
+              "pageviews": 7,
+              "visitors": 3
             },
             {
               "source": "app.greenhouse.io",
@@ -1149,13 +1199,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 104,
-              "visitors": 10
+              "hits": 108,
+              "visitors": 11
             },
             {
               "event": "section_view",
@@ -1176,7 +1231,7 @@
         },
         "d30": {
           "home_funnel": {
-            "landed": 33,
+            "landed": 34,
             "opened": 15,
             "first_opens": [
               {
@@ -1202,7 +1257,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 19
+              "visits": 20
             },
             {
               "pages": [
@@ -1319,16 +1374,16 @@
             }
           ],
           "totals": {
-            "visitors": 43,
-            "pageviews": 72,
+            "visitors": 44,
+            "pageviews": 73,
             "prev_visitors": 7,
             "prev_pageviews": 8
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 36,
-              "visitors": 33
+              "pageviews": 37,
+              "visitors": 34
             },
             {
               "path": "/confirmo",
@@ -1369,8 +1424,8 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 14,
-              "visitors": 7
+              "pageviews": 15,
+              "visitors": 8
             },
             {
               "source": "www.google.com",
@@ -1448,8 +1503,8 @@
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 213,
-              "visitors": 31
+              "hits": 217,
+              "visitors": 32
             },
             {
               "event": "section_view",
@@ -1472,40 +1527,40 @@
       "pages_table": [
         {
           "path": "/",
-          "all_pageviews": 39,
-          "all_visitors": 36,
+          "all_pageviews": 40,
+          "all_visitors": 37,
           "w": {
             "d1": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d2": {
-              "pageviews": 3,
-              "visitors": 2
+              "pageviews": 4,
+              "visitors": 3
             },
             "d3": {
-              "pageviews": 5,
-              "visitors": 4
+              "pageviews": 6,
+              "visitors": 5
             },
             "d4": {
-              "pageviews": 8,
-              "visitors": 6
+              "pageviews": 9,
+              "visitors": 7
             },
             "d5": {
-              "pageviews": 10,
-              "visitors": 8
+              "pageviews": 11,
+              "visitors": 9
             },
             "d6": {
-              "pageviews": 16,
-              "visitors": 13
+              "pageviews": 17,
+              "visitors": 14
             },
             "d7": {
-              "pageviews": 16,
-              "visitors": 13
+              "pageviews": 17,
+              "visitors": 14
             },
             "d30": {
-              "pageviews": 36,
-              "visitors": 33
+              "pageviews": 37,
+              "visitors": 34
             }
           }
         },
@@ -1894,83 +1949,19 @@
         },
         {
           "day": "2026-08-29",
-          "visitors": 1,
-          "pageviews": 1
+          "visitors": 7,
+          "pageviews": 8
         }
       ],
       "windows": {
         "d1": {
           "home_funnel": {
-            "landed": 1,
-            "opened": 0,
-            "first_opens": []
-          },
-          "trajectories": [
-            {
-              "pages": [
-                "/"
-              ],
-              "visits": 1
-            }
-          ],
-          "totals": {
-            "visitors": 1,
-            "pageviews": 1,
-            "prev_visitors": 6,
-            "prev_pageviews": 10
-          },
-          "top_pages": [
-            {
-              "path": "/",
-              "pageviews": 1,
-              "visitors": 1
-            }
-          ],
-          "sources": [
-            {
-              "source": "$direct",
-              "pageviews": 1,
-              "visitors": 1
-            }
-          ],
-          "countries": [
-            {
-              "country": "Portugal",
-              "pageviews": 1,
-              "visitors": 1
-            }
-          ],
-          "events": [
-            {
-              "event": "project_open",
-              "hits": 0,
-              "visitors": 0
-            },
-            {
-              "event": "outbound_click",
-              "hits": 0,
-              "visitors": 0
-            },
-            {
-              "event": "section_view",
-              "hits": 0,
-              "visitors": 0
-            },
-            {
-              "event": "scroll_depth",
-              "hits": 0,
-              "visitors": 0
-            }
-          ]
-        },
-        "d2": {
-          "home_funnel": {
-            "landed": 7,
-            "opened": 2,
+            "landed": 6,
+            "opened": 1,
             "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 2
+                "visitors": 1
               }
             ]
           },
@@ -1979,15 +1970,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 6
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo",
-                "/mara"
-              ],
-              "visits": 1
+              "visits": 5
             },
             {
               "pages": [
@@ -1995,27 +1978,33 @@
                 "/confirmo"
               ],
               "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
             }
           ],
           "totals": {
             "visitors": 7,
-            "pageviews": 11,
-            "prev_visitors": 12,
-            "prev_pageviews": 22
+            "pageviews": 8,
+            "prev_visitors": 6,
+            "prev_pageviews": 10
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 8,
-              "visitors": 7
+              "pageviews": 6,
+              "visitors": 6
             },
             {
               "path": "/confirmo",
-              "pageviews": 2,
-              "visitors": 2
+              "pageviews": 1,
+              "visitors": 1
             },
             {
-              "path": "/mara",
+              "path": "/done",
               "pageviews": 1,
               "visitors": 1
             }
@@ -2028,27 +2017,147 @@
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
+              "pageviews": 1,
               "visitors": 1
             }
           ],
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 5,
-              "visitors": 5
+              "pageviews": 7,
+              "visitors": 6
             },
             {
-              "country": "United States",
-              "pageviews": 6,
-              "visitors": 2
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 42,
-              "visitors": 7
+              "hits": 17,
+              "visitors": 2
+            },
+            {
+              "event": "project_open",
+              "hits": 1,
+              "visitors": 1
+            },
+            {
+              "event": "outbound_click",
+              "hits": 0,
+              "visitors": 0
+            },
+            {
+              "event": "section_view",
+              "hits": 0,
+              "visitors": 0
+            }
+          ]
+        },
+        "d2": {
+          "home_funnel": {
+            "landed": 12,
+            "opened": 3,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 3
+              }
+            ]
+          },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 10
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 2
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
+            }
+          ],
+          "totals": {
+            "visitors": 13,
+            "pageviews": 18,
+            "prev_visitors": 12,
+            "prev_pageviews": 22
+          },
+          "top_pages": [
+            {
+              "path": "/",
+              "pageviews": 13,
+              "visitors": 12
+            },
+            {
+              "path": "/confirmo",
+              "pageviews": 3,
+              "visitors": 3
+            },
+            {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/mara",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "sources": [
+            {
+              "source": "$direct",
+              "pageviews": 13,
+              "visitors": 11
+            },
+            {
+              "source": "www.linkedin.com",
+              "pageviews": 5,
+              "visitors": 2
+            }
+          ],
+          "countries": [
+            {
+              "country": "Portugal",
+              "pageviews": 11,
+              "visitors": 10
+            },
+            {
+              "country": "United States",
+              "pageviews": 6,
+              "visitors": 2
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "events": [
+            {
+              "event": "scroll_depth",
+              "hits": 59,
+              "visitors": 9
             },
             {
               "event": "section_view",
@@ -2056,25 +2165,25 @@
               "visitors": 2
             },
             {
-              "event": "outbound_click",
+              "event": "project_open",
               "hits": 1,
               "visitors": 1
             },
             {
-              "event": "project_open",
-              "hits": 0,
-              "visitors": 0
+              "event": "outbound_click",
+              "hits": 1,
+              "visitors": 1
             }
           ]
         },
         "d3": {
           "home_funnel": {
-            "landed": 10,
-            "opened": 4,
+            "landed": 15,
+            "opened": 5,
             "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 3
+                "visitors": 4
               },
               {
                 "project": "mara",
@@ -2087,7 +2196,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 7
+              "visits": 11
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 2
             },
             {
               "pages": [
@@ -2109,39 +2225,43 @@
             {
               "pages": [
                 "/",
-                "/confirmo"
+                "/mara"
               ],
               "visits": 1
             },
             {
               "pages": [
-                "/",
-                "/mara"
+                "/done"
               ],
               "visits": 1
             }
           ],
           "totals": {
-            "visitors": 10,
-            "pageviews": 18,
+            "visitors": 16,
+            "pageviews": 25,
             "prev_visitors": 37,
             "prev_pageviews": 49
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 11,
-              "visitors": 10
+              "pageviews": 16,
+              "visitors": 15
             },
             {
               "path": "/confirmo",
-              "pageviews": 3,
-              "visitors": 3
+              "pageviews": 4,
+              "visitors": 4
             },
             {
               "path": "/mara",
               "pageviews": 3,
               "visitors": 3
+            },
+            {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
             },
             {
               "path": "/starcount",
@@ -2152,13 +2272,13 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 12,
-              "visitors": 8
+              "pageviews": 18,
+              "visitors": 13
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "app.greenhouse.io",
@@ -2169,8 +2289,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 6,
-              "visitors": 6
+              "pageviews": 12,
+              "visitors": 11
             },
             {
               "country": "United States",
@@ -2186,13 +2306,18 @@
               "country": "Ireland",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 62,
-              "visitors": 9
+              "hits": 79,
+              "visitors": 11
             },
             {
               "event": "section_view",
@@ -2200,197 +2325,20 @@
               "visitors": 4
             },
             {
-              "event": "outbound_click",
+              "event": "project_open",
               "hits": 1,
               "visitors": 1
             },
             {
-              "event": "project_open",
-              "hits": 0,
-              "visitors": 0
+              "event": "outbound_click",
+              "hits": 1,
+              "visitors": 1
             }
           ]
         },
         "d4": {
           "home_funnel": {
-            "landed": 19,
-            "opened": 6,
-            "first_opens": [
-              {
-                "project": "confirmo",
-                "visitors": 5
-              },
-              {
-                "project": "mara",
-                "visitors": 1
-              }
-            ]
-          },
-          "trajectories": [
-            {
-              "pages": [
-                "/"
-              ],
-              "visits": 14
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo",
-                "/mara",
-                "/starcount",
-                "/penfold"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo",
-                "/mara",
-                "/starcount"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo",
-                "/"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo",
-                "/mara"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/confirmo"
-              ],
-              "visits": 1
-            },
-            {
-              "pages": [
-                "/",
-                "/mara"
-              ],
-              "visits": 1
-            }
-          ],
-          "totals": {
-            "visitors": 19,
-            "pageviews": 33,
-            "prev_visitors": 34,
-            "prev_pageviews": 40
-          },
-          "top_pages": [
-            {
-              "path": "/",
-              "pageviews": 21,
-              "visitors": 19
-            },
-            {
-              "path": "/confirmo",
-              "pageviews": 5,
-              "visitors": 5
-            },
-            {
-              "path": "/mara",
-              "pageviews": 4,
-              "visitors": 4
-            },
-            {
-              "path": "/starcount",
-              "pageviews": 2,
-              "visitors": 2
-            },
-            {
-              "path": "/penfold",
-              "pageviews": 1,
-              "visitors": 1
-            }
-          ],
-          "sources": [
-            {
-              "source": "$direct",
-              "pageviews": 27,
-              "visitors": 17
-            },
-            {
-              "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
-            },
-            {
-              "source": "app.greenhouse.io",
-              "pageviews": 2,
-              "visitors": 1
-            }
-          ],
-          "countries": [
-            {
-              "country": "Portugal",
-              "pageviews": 13,
-              "visitors": 13
-            },
-            {
-              "country": "United States",
-              "pageviews": 6,
-              "visitors": 2
-            },
-            {
-              "country": "Spain",
-              "pageviews": 5,
-              "visitors": 1
-            },
-            {
-              "country": "Germany",
-              "pageviews": 4,
-              "visitors": 1
-            },
-            {
-              "country": "Luxembourg",
-              "pageviews": 3,
-              "visitors": 1
-            },
-            {
-              "country": "Ireland",
-              "pageviews": 2,
-              "visitors": 1
-            }
-          ],
-          "events": [
-            {
-              "event": "scroll_depth",
-              "hits": 112,
-              "visitors": 16
-            },
-            {
-              "event": "section_view",
-              "hits": 70,
-              "visitors": 6
-            },
-            {
-              "event": "outbound_click",
-              "hits": 2,
-              "visitors": 2
-            },
-            {
-              "event": "project_open",
-              "hits": 0,
-              "visitors": 0
-            }
-          ]
-        },
-        "d5": {
-          "home_funnel": {
-            "landed": 29,
+            "landed": 24,
             "opened": 7,
             "first_opens": [
               {
@@ -2408,7 +2356,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 23
+              "visits": 18
             },
             {
               "pages": [
@@ -2458,19 +2406,25 @@
                 "/mara"
               ],
               "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 29,
-            "pageviews": 45,
-            "prev_visitors": 37,
-            "prev_pageviews": 55
+            "visitors": 25,
+            "pageviews": 40,
+            "prev_visitors": 34,
+            "prev_pageviews": 40
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 32,
-              "visitors": 29
+              "pageviews": 26,
+              "visitors": 24
             },
             {
               "path": "/confirmo",
@@ -2488,6 +2442,11 @@
               "visitors": 2
             },
             {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
               "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
@@ -2496,13 +2455,13 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 39,
-              "visitors": 27
+              "pageviews": 33,
+              "visitors": 22
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 4,
-              "visitors": 1
+              "pageviews": 5,
+              "visitors": 2
             },
             {
               "source": "app.greenhouse.io",
@@ -2513,8 +2472,201 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 22,
-              "visitors": 21
+              "pageviews": 19,
+              "visitors": 18
+            },
+            {
+              "country": "United States",
+              "pageviews": 6,
+              "visitors": 2
+            },
+            {
+              "country": "Spain",
+              "pageviews": 5,
+              "visitors": 1
+            },
+            {
+              "country": "Germany",
+              "pageviews": 4,
+              "visitors": 1
+            },
+            {
+              "country": "Luxembourg",
+              "pageviews": 3,
+              "visitors": 1
+            },
+            {
+              "country": "Ireland",
+              "pageviews": 2,
+              "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "events": [
+            {
+              "event": "scroll_depth",
+              "hits": 129,
+              "visitors": 18
+            },
+            {
+              "event": "section_view",
+              "hits": 70,
+              "visitors": 6
+            },
+            {
+              "event": "outbound_click",
+              "hits": 2,
+              "visitors": 2
+            },
+            {
+              "event": "project_open",
+              "hits": 1,
+              "visitors": 1
+            }
+          ]
+        },
+        "d5": {
+          "home_funnel": {
+            "landed": 34,
+            "opened": 8,
+            "first_opens": [
+              {
+                "project": "confirmo",
+                "visitors": 7
+              },
+              {
+                "project": "mara",
+                "visitors": 1
+              }
+            ]
+          },
+          "trajectories": [
+            {
+              "pages": [
+                "/"
+              ],
+              "visits": 27
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo"
+              ],
+              "visits": 3
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount",
+                "/penfold"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara",
+                "/starcount"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/confirmo",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/",
+                "/mara"
+              ],
+              "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
+            }
+          ],
+          "totals": {
+            "visitors": 35,
+            "pageviews": 52,
+            "prev_visitors": 37,
+            "prev_pageviews": 55
+          },
+          "top_pages": [
+            {
+              "path": "/",
+              "pageviews": 37,
+              "visitors": 34
+            },
+            {
+              "path": "/confirmo",
+              "pageviews": 7,
+              "visitors": 7
+            },
+            {
+              "path": "/mara",
+              "pageviews": 4,
+              "visitors": 4
+            },
+            {
+              "path": "/starcount",
+              "pageviews": 2,
+              "visitors": 2
+            },
+            {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
+              "path": "/penfold",
+              "pageviews": 1,
+              "visitors": 1
+            }
+          ],
+          "sources": [
+            {
+              "source": "$direct",
+              "pageviews": 45,
+              "visitors": 32
+            },
+            {
+              "source": "www.linkedin.com",
+              "pageviews": 5,
+              "visitors": 2
+            },
+            {
+              "source": "app.greenhouse.io",
+              "pageviews": 2,
+              "visitors": 1
+            }
+          ],
+          "countries": [
+            {
+              "country": "Portugal",
+              "pageviews": 28,
+              "visitors": 26
             },
             {
               "country": "United States",
@@ -2545,13 +2697,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 140,
-              "visitors": 22
+              "hits": 157,
+              "visitors": 24
             },
             {
               "event": "section_view",
@@ -2565,19 +2722,19 @@
             },
             {
               "event": "project_open",
-              "hits": 0,
-              "visitors": 0
+              "hits": 1,
+              "visitors": 1
             }
           ]
         },
         "d6": {
           "home_funnel": {
-            "landed": 47,
-            "opened": 9,
+            "landed": 52,
+            "opened": 10,
             "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 8
+                "visitors": 9
               },
               {
                 "project": "mara",
@@ -2590,14 +2747,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 39
+              "visits": 43
             },
             {
               "pages": [
                 "/",
                 "/confirmo"
               ],
-              "visits": 3
+              "visits": 4
             },
             {
               "pages": [
@@ -2649,24 +2806,30 @@
                 "/mara"
               ],
               "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 47,
-            "pageviews": 67,
+            "visitors": 53,
+            "pageviews": 74,
             "prev_visitors": 21,
             "prev_pageviews": 35
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 51,
-              "visitors": 47
+              "pageviews": 56,
+              "visitors": 52
             },
             {
               "path": "/confirmo",
-              "pageviews": 8,
-              "visitors": 8
+              "pageviews": 9,
+              "visitors": 9
             },
             {
               "path": "/mara",
@@ -2679,6 +2842,11 @@
               "visitors": 2
             },
             {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
               "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
@@ -2687,13 +2855,13 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 59,
-              "visitors": 44
+              "pageviews": 65,
+              "visitors": 49
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 6,
-              "visitors": 2
+              "pageviews": 7,
+              "visitors": 3
             },
             {
               "source": "app.greenhouse.io",
@@ -2704,8 +2872,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 35,
-              "visitors": 34
+              "pageviews": 41,
+              "visitors": 39
             },
             {
               "country": "United States",
@@ -2741,13 +2909,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 210,
-              "visitors": 36
+              "hits": 227,
+              "visitors": 38
             },
             {
               "event": "section_view",
@@ -2761,19 +2934,19 @@
             },
             {
               "event": "project_open",
-              "hits": 0,
-              "visitors": 0
+              "hits": 1,
+              "visitors": 1
             }
           ]
         },
         "d7": {
           "home_funnel": {
-            "landed": 50,
-            "opened": 9,
+            "landed": 55,
+            "opened": 10,
             "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 8
+                "visitors": 9
               },
               {
                 "project": "mara",
@@ -2786,14 +2959,14 @@
               "pages": [
                 "/"
               ],
-              "visits": 42
+              "visits": 46
             },
             {
               "pages": [
                 "/",
                 "/confirmo"
               ],
-              "visits": 3
+              "visits": 4
             },
             {
               "pages": [
@@ -2845,24 +3018,30 @@
                 "/mara"
               ],
               "visits": 1
+            },
+            {
+              "pages": [
+                "/done"
+              ],
+              "visits": 1
             }
           ],
           "totals": {
-            "visitors": 50,
-            "pageviews": 70,
+            "visitors": 56,
+            "pageviews": 77,
             "prev_visitors": 21,
             "prev_pageviews": 35
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 54,
-              "visitors": 50
+              "pageviews": 59,
+              "visitors": 55
             },
             {
               "path": "/confirmo",
-              "pageviews": 8,
-              "visitors": 8
+              "pageviews": 9,
+              "visitors": 9
             },
             {
               "path": "/mara",
@@ -2875,6 +3054,11 @@
               "visitors": 2
             },
             {
+              "path": "/done",
+              "pageviews": 1,
+              "visitors": 1
+            },
+            {
               "path": "/penfold",
               "pageviews": 1,
               "visitors": 1
@@ -2883,13 +3067,13 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 62,
-              "visitors": 47
+              "pageviews": 68,
+              "visitors": 52
             },
             {
               "source": "www.linkedin.com",
-              "pageviews": 6,
-              "visitors": 2
+              "pageviews": 7,
+              "visitors": 3
             },
             {
               "source": "app.greenhouse.io",
@@ -2900,8 +3084,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 38,
-              "visitors": 37
+              "pageviews": 44,
+              "visitors": 42
             },
             {
               "country": "United States",
@@ -2937,13 +3121,18 @@
               "country": "United Kingdom",
               "pageviews": 2,
               "visitors": 1
+            },
+            {
+              "country": "North Macedonia",
+              "pageviews": 1,
+              "visitors": 1
             }
           ],
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 210,
-              "visitors": 36
+              "hits": 227,
+              "visitors": 38
             },
             {
               "event": "section_view",
@@ -2957,19 +3146,19 @@
             },
             {
               "event": "project_open",
-              "hits": 0,
-              "visitors": 0
+              "hits": 1,
+              "visitors": 1
             }
           ]
         },
         "d30": {
           "home_funnel": {
-            "landed": 186,
-            "opened": 63,
+            "landed": 191,
+            "opened": 64,
             "first_opens": [
               {
                 "project": "confirmo",
-                "visitors": 30
+                "visitors": 31
               },
               {
                 "project": "penfold",
@@ -2998,7 +3187,7 @@
               "pages": [
                 "/"
               ],
-              "visits": 131
+              "visits": 135
             },
             {
               "pages": [
@@ -3028,7 +3217,7 @@
               "pages": [
                 "/done"
               ],
-              "visits": 27
+              "visits": 28
             },
             {
               "pages": [
@@ -3041,7 +3230,7 @@
                 "/",
                 "/confirmo"
               ],
-              "visits": 15
+              "visits": 16
             },
             {
               "pages": [
@@ -3747,16 +3936,16 @@
             }
           ],
           "totals": {
-            "visitors": 398,
-            "pageviews": 1127,
+            "visitors": 404,
+            "pageviews": 1134,
             "prev_visitors": 105,
             "prev_pageviews": 238
           },
           "top_pages": [
             {
               "path": "/",
-              "pageviews": 347,
-              "visitors": 210
+              "pageviews": 352,
+              "visitors": 215
             },
             {
               "path": "/mara",
@@ -3765,13 +3954,13 @@
             },
             {
               "path": "/confirmo",
-              "pageviews": 141,
-              "visitors": 88
+              "pageviews": 142,
+              "visitors": 89
             },
             {
               "path": "/done",
-              "pageviews": 119,
-              "visitors": 47
+              "pageviews": 120,
+              "visitors": 48
             },
             {
               "path": "/penfold",
@@ -3817,17 +4006,17 @@
           "sources": [
             {
               "source": "$direct",
-              "pageviews": 856,
-              "visitors": 331
+              "pageviews": 862,
+              "visitors": 336
+            },
+            {
+              "source": "www.linkedin.com",
+              "pageviews": 15,
+              "visitors": 8
             },
             {
               "source": "localhost:8899",
               "pageviews": 72,
-              "visitors": 7
-            },
-            {
-              "source": "www.linkedin.com",
-              "pageviews": 14,
               "visitors": 7
             },
             {
@@ -3849,8 +4038,8 @@
           "countries": [
             {
               "country": "Portugal",
-              "pageviews": 1055,
-              "visitors": 355
+              "pageviews": 1061,
+              "visitors": 360
             },
             {
               "country": "United States",
@@ -3911,8 +4100,8 @@
           "events": [
             {
               "event": "scroll_depth",
-              "hits": 2604,
-              "visitors": 300
+              "hits": 2621,
+              "visitors": 302
             },
             {
               "event": "section_view",
@@ -3921,8 +4110,8 @@
             },
             {
               "event": "project_open",
-              "hits": 85,
-              "visitors": 12
+              "hits": 86,
+              "visitors": 13
             },
             {
               "event": "outbound_click",
@@ -3935,79 +4124,79 @@
       "pages_table": [
         {
           "path": "/",
-          "all_pageviews": 470,
-          "all_visitors": 268,
+          "all_pageviews": 475,
+          "all_visitors": 273,
+          "w": {
+            "d1": {
+              "pageviews": 6,
+              "visitors": 6
+            },
+            "d2": {
+              "pageviews": 13,
+              "visitors": 12
+            },
+            "d3": {
+              "pageviews": 16,
+              "visitors": 15
+            },
+            "d4": {
+              "pageviews": 26,
+              "visitors": 24
+            },
+            "d5": {
+              "pageviews": 37,
+              "visitors": 34
+            },
+            "d6": {
+              "pageviews": 56,
+              "visitors": 52
+            },
+            "d7": {
+              "pageviews": 59,
+              "visitors": 55
+            },
+            "d30": {
+              "pageviews": 352,
+              "visitors": 215
+            }
+          }
+        },
+        {
+          "path": "/confirmo",
+          "all_pageviews": 186,
+          "all_visitors": 124,
           "w": {
             "d1": {
               "pageviews": 1,
               "visitors": 1
             },
             "d2": {
-              "pageviews": 8,
-              "visitors": 7
-            },
-            "d3": {
-              "pageviews": 11,
-              "visitors": 10
-            },
-            "d4": {
-              "pageviews": 21,
-              "visitors": 19
-            },
-            "d5": {
-              "pageviews": 32,
-              "visitors": 29
-            },
-            "d6": {
-              "pageviews": 51,
-              "visitors": 47
-            },
-            "d7": {
-              "pageviews": 54,
-              "visitors": 50
-            },
-            "d30": {
-              "pageviews": 347,
-              "visitors": 210
-            }
-          }
-        },
-        {
-          "path": "/confirmo",
-          "all_pageviews": 185,
-          "all_visitors": 123,
-          "w": {
-            "d1": {
-              "pageviews": 0,
-              "visitors": 0
-            },
-            "d2": {
-              "pageviews": 2,
-              "visitors": 2
-            },
-            "d3": {
               "pageviews": 3,
               "visitors": 3
             },
-            "d4": {
-              "pageviews": 5,
-              "visitors": 5
+            "d3": {
+              "pageviews": 4,
+              "visitors": 4
             },
-            "d5": {
+            "d4": {
               "pageviews": 6,
               "visitors": 6
             },
+            "d5": {
+              "pageviews": 7,
+              "visitors": 7
+            },
             "d6": {
-              "pageviews": 8,
-              "visitors": 8
+              "pageviews": 9,
+              "visitors": 9
             },
             "d7": {
-              "pageviews": 8,
-              "visitors": 8
+              "pageviews": 9,
+              "visitors": 9
             },
             "d30": {
-              "pageviews": 141,
-              "visitors": 88
+              "pageviews": 142,
+              "visitors": 89
             }
           }
         },
@@ -4130,40 +4319,40 @@
         },
         {
           "path": "/done",
-          "all_pageviews": 119,
-          "all_visitors": 47,
+          "all_pageviews": 120,
+          "all_visitors": 48,
           "w": {
             "d1": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d2": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d3": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d4": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d5": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d6": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d7": {
-              "pageviews": 0,
-              "visitors": 0
+              "pageviews": 1,
+              "visitors": 1
             },
             "d30": {
-              "pageviews": 119,
-              "visitors": 47
+              "pageviews": 120,
+              "visitors": 48
             }
           }
         },
